@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta -->
+    <!-- SEO Meta -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,20 +24,20 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <!-- Bootstrap CSS -->
-    <!-- <link
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
-    /> -->
+    />
     <!-- Style Sheets -->
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <!-- Skip to main content for keyboard -->
-    <a class="skip-main" href="#placeholder">Skip to main content</a>
+    <a class="skip-main" href="#main">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="header">
+    <div class="header">
       <a class="title" href="/">
         <img src="./images/logo.png" class="logo" alt="" />
         <div title="return to homepage">Yu-Li Hunsicker</div>
@@ -48,18 +48,83 @@
         <a class="nav_link" title="Resume" href="/Resume">Resume</a>
         <a class="nav_link" title="Let's Chat" href="/LetsChat">Let's Chat</a>
       </div>
-    </nav>
+    </div>
     <!-- Main content -->
-    <div id="placeholder">
-      <!-- <img src="./images/Profile Pic.svg" alt="" /> -->
+    <div id="main">
+      <!-- Intro header -->
       <div class="cover_header">
         <h1>
           <span role="text">
             Hi, I'm Yu-Li
-            <span class="characters" lang="zh">玉立！</span>
-            I'm a UX/UI designer
+            <span class="characters" lang="zh">玉立</span>
+            <span class="exclaimation">!</span> I'm a UX/UI & Accessibility
+            Specialist.
           </span>
         </h1>
+      </div>
+      <!-- short intro blurb -->
+      <div class="intro-blurb">
+        <img class="profile-picture" src="./images/Profile Pic.svg" alt="" />
+        <div class="intro-text">
+          <p>
+            With an inclusive and design ethics mindset, I design sustainable
+            solutions that leave a positive impact on people and the
+            environment, all while balancing user and business needs to create
+            compelling products.
+          </p>
+        </div>
+      </div>
+      <!-- services -->
+      <div class="row mt">
+        <h2 id="service" class="sr-only">How can I best serve you?</h2>
+        <!--Card List-->
+        <div class="col-lg-4">
+          <div class="card">
+            <h3 aria-describedby="p-mentor">
+              <a href="https://calendly.com/joshkimux/mentoring"
+                >Mentorship <i aria-hidden="true" class="external-link"></i
+              ></a>
+            </h3>
+            <p id="p-mentor">
+              Let's chat! Schedule a call with me on calendly.
+            </p>
+            <aside role="note">
+              <span class="sr-only">This is for</span> Students
+            </aside>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <h3 aria-describedby="p-mentor">
+              <a href="https://calendly.com/joshkimux/mentoring"
+                >Mentorship <i aria-hidden="true" class="external-link"></i
+              ></a>
+            </h3>
+            <p id="p-mentor">
+              Let's chat! Schedule a call with me on calendly.
+            </p>
+            <aside role="note">
+              <span class="sr-only">This is for</span> Students
+            </aside>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <h3 aria-describedby="p-mentor">
+              <a href="https://calendly.com/joshkimux/mentoring"
+                >Mentorship <i aria-hidden="true" class="external-link"></i
+              ></a>
+            </h3>
+            <p id="p-mentor">
+              Let's chat! Schedule a call with me on calendly.
+            </p>
+            <aside role="note">
+              <span class="sr-only">This is for</span> Students
+            </aside>
+          </div>
+        </div>
+
+        <!--end of cards-->
       </div>
     </div>
 
