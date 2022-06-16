@@ -20,17 +20,48 @@
       Home | Yu-Li Hunsicker, user experience designer of inclusive and
       accessible experiences
     </title>
-    <!-- Style Sheets -->
-    <link rel="stylesheet" type="text/css" href="style.css" />
     <!-- Free Google Fonts -->
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <!-- Bootstrap -->
+    <!-- Bootstrap? -->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- Style Sheets -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <!-- Skip to main content for keyboard -->
-    <a class="skip-main" href="class/html-css/navigation/skip-navigation#content"">Skip to main content</a>
+    <a class="skip-main" href="#placeholder">Skip to main content</a>
+    <!-- Navigation -->
+    <nav class="header">
+      <a class="title" href="/">
+        <img src="./images/logo.png" class="logo" alt="" />
+        <div title="return to homepage">
+          Yu-Li Hunsicker | UX/UI Designer & Accessibility Specialist
+        </div>
+      </a>
+      <div class="navigation">
+        <a class="nav_link" title="About" href="/About">About</a>
+        <a class="nav_link" title="Portfolio" href="/Portfolio">Portfolio</a>
+        <a class="nav_link" title="Resume" href="/Resume">Resume</a>
+        <a class="nav_link" title="Let's Chat" href="/LetsChat">Let's Chat</a>
+      </div>
+    </nav>
     <!-- Main content -->
-    <h1 id="content">The heading at the beginning of main content</h1>
+    <div id="placeholder">
+      <h1>Testing</h1>
+    </div>
+
+    <!-- Bootstrap JavaScript (JavaScript Bundle with Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
