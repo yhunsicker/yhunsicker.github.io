@@ -215,5 +215,14 @@ h3 {
 .work-container {
   background-color: lightgray;
   padding-bottom: 70px;
-  margin-top: 100px;
+  margin-top: 150px;
+}
+
+h2 {
+  font-size: 40px;
+  font-family: Noto Sans JP, sans-serif;
+  font-weight: 700;
+  color: black;
+  margin: 47px 150px 0;
+  padding-top: 40px;
 }
