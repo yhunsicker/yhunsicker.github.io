@@ -79,7 +79,7 @@ a {
 h1 {
   font-size: 68px;
   line-height: 1.4;
-  font-weight: 900;
+  font-weight: 900 !important;
   letter-spacing: 0.8px;
   margin: 47px 150px 0;
   font-family: Noto Sans JP, sans-serif;
@@ -96,6 +96,7 @@ h1 {
   justify-content: center;
   align-items: center;
   font-family: Noto Sans JP, sans-serif;
+  column-gap: 100px;
 }
 
 .profile-picture {
@@ -104,7 +105,7 @@ h1 {
 }
 
 p {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 40px;
   letter-spacing: -0.2px;
@@ -129,25 +130,73 @@ p {
 }
 
 /* card lists */
-.card {
-  border-radius: 0rem;
-  border-top: 4px solid #ffe66b !important;
-  border: 0px;
-  background-color: inherit;
-  margin-bottom: 1.5rem;
-  padding: 2rem 2rem 2rem 0rem;
-  transition: ease 0.2s;
+.card-container {
+  width: 350px;
+  margin-bottom: 2em;
 }
 
-/* .service-cards-container {
+/* .card-container:hover {
+  background-color: #ffe66b;
+  transition: ease 1s;
+} */
+
+.card {
+  border-radius: 0rem;
+  border-top: 8px solid #ffe66b !important;
+  background: linear-gradient(
+      to right,
+      rgba(100, 200, 200, 1),
+      rgba(100, 200, 200, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.card:hover {
+  background-size: 0 3px, 100% 3px;
+}
+
+.row-services {
   display: flex;
   justify-content: center;
   align-items: center;
+  column-gap: 80px;
+  /* max-width: 100%; */
 }
 
-.card {
+/* .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
 } */
+
+.tag {
+  font-family: Noto Sans JP, sans-serif;
+  font-size: 24px;
+}
+
+#p-mentor {
+  width: 400px;
+  font-family: Noto Sans JP, sans-serif;
+}
+
+.participant {
+  font-family: Noto Sans JP, sans-serif;
+  margin-top: 10px;
+}
+
+/* work-container */
+.work-container {
+  background-color: lightgray;
+  padding-bottom: 70px;
+  margin-top: 100px;
+}
