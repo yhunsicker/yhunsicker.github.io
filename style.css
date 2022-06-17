@@ -140,10 +140,29 @@ p {
   transition: ease 1s;
 } */
 
+/* a {
+  border-top: 10px solid #ffe66b;
+  background: linear-gradient(to right, rgb(178, 209, 52), rgb(178, 209, 52)),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
+  background-size: 100% 10px, 0 10px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+a:hover {
+  /* background-size: 0 10px, 100% 10px; */
+/* background-color: blue;
+} */
+
 .card {
-  border-radius: 0rem;
   border-top: 8px solid #ffe66b !important;
-  background: linear-gradient(
+  /* background: linear-gradient(
       to right,
       rgba(100, 200, 200, 1),
       rgba(100, 200, 200, 1)
@@ -154,14 +173,16 @@ p {
       rgba(255, 0, 180, 1),
       rgba(0, 100, 200, 1)
     );
-  background-size: 100% 3px, 0 3px;
-  background-position: 100% 100%, 0 100%;
+  background-size: 100% 10px, 0 10px;
+  background-position: 100% 100%, 0% 100%;
   background-repeat: no-repeat;
-  transition: background-size 400ms;
+  transition: background-size 400ms; */
 }
 
 .card:hover {
-  background-size: 0 3px, 100% 3px;
+  /* background-size: 0 10px, 100% 10px; */
+  /* background-color: #ffe66b; */
+  cursor: pointer;
 }
 
 .row-services {
@@ -169,22 +190,16 @@ p {
   justify-content: center;
   align-items: center;
   column-gap: 80px;
-  /* max-width: 100%; */
+  max-width: 100%;
 }
 
-/* .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-} */
-
-.tag {
+h3 {
   font-family: Noto Sans JP, sans-serif;
   font-size: 24px;
+  margin: 10 0;
 }
 
-#p-mentor {
+#mentorship {
   width: 400px;
   font-family: Noto Sans JP, sans-serif;
 }
@@ -192,6 +207,8 @@ p {
 .participant {
   font-family: Noto Sans JP, sans-serif;
   margin-top: 10px;
+  color: blue;
+  font-style: italic;
 }
 
 /* work-container */
