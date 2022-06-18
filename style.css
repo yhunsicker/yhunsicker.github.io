@@ -38,25 +38,17 @@ a:hover {
 .skip-main a {
   top: -10em;
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-  display: none;
 }
 
-.skip-main:focus {
+.skip-main a:focus {
+  position: static;
   display: block;
   padding: 15px;
-  padding: 1.5rem;
   background: #b42d2f;
   text-align: center;
   color: #fff;
-  font-weight: 700;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  font-weight: 300;
 }
 
 /* header */
