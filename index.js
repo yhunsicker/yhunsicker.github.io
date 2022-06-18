@@ -1,3 +1,4 @@
+// particles script
 window.onload = function () {
   Particles.init({
     selector: ".background",
@@ -10,3 +11,22 @@ window.onload = function () {
   });
 };
 1;
+
+// Lock screen
+// When the user "clicks" on Massachusettes State Government, a prompt shows with a message.
+
+const modal = document.getElementById("massgov");
+const modalOverLay = document.getElementById("overlay");
+
+function overLay() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function openModal() {
+  console.log("modal opened");
+}
+massgov.addEventListener("click", overLay);
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
