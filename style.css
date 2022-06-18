@@ -7,34 +7,19 @@
   display: block;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: -999;
 }
 
 a {
   color: black;
   text-decoration: underline;
   font-weight: 300;
+  z-index: 1;
 }
 
 a:hover {
   text-decoration: none;
-}
-
-.navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 30px;
-}
-
-.nav_link {
-  color: black;
-  text-decoration: none;
-}
-
-.nav_link:hover a {
-  color: #b42d2f;
-  text-decoration: underline;
+  z-index: 1;
 }
 
 /* skip to main */
@@ -66,12 +51,32 @@ a:hover {
   display: flex;
   align-items: center;
   font-size: 18px;
+  text-decoration: none;
 }
 
 .logo {
   height: 44px;
   width: 44px;
   margin-right: 12px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+}
+
+.nav_link {
+  color: black;
+  text-decoration: underline;
+  z-index: 1;
+}
+
+.nav_link:hover a {
+  color: black;
+  text-decoration: none;
+  z-index: 1;
 }
 
 /* Intro */
