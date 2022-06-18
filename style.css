@@ -211,13 +211,9 @@ h3:hover {
   text-decoration: none;
 }
 
-.p_services {
-  width: 350px;
-  font-weight: 300;
-  margin: 0;
-  padding-top: 16px;
-  font-size: 18px;
+.p-card {
   line-height: 30px;
+  font-size: 18px;
 }
 
 .participant {
