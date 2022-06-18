@@ -406,12 +406,6 @@ li:hover {
   z-index: 2;
   cursor: pointer;
 }
-.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-}
 
 .modal-container {
   width: 470px;
@@ -437,6 +431,10 @@ li:hover {
   border: none;
   align-items: left;
   display: block;
+}
+
+.password-protected {
+  text-decoration: none;
 }
 
 .modal-header .close {
