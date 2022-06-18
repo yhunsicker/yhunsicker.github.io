@@ -19,9 +19,11 @@ const modal = document.getElementById("massgov");
 const modalOverLay = document.getElementById("overlay");
 const exit = document.querySelector(".close");
 
-// select overlay for the modal to appear
+// select overlay for the modal to appear and stop background scrolling
 function overLay() {
   document.getElementById("overlay").style.display = "block";
+  document.documentElement.style.overflow = "hidden";
+  document.body.scroll = "no";
 }
 
 // select massgov for the modal to appear
@@ -33,10 +35,12 @@ function openModal() {
 modal.addEventListener("click", overLay);
 modalOverLay.addEventListener("click", openModal);
 
-// set function of close modal
+// set function of close modal and allow scrolling to continue
 function closeModal() {
   document.getElementById("overlay").style.display = "none";
   document.getElementById("massgov").style.display = "none";
+  document.documentElement.style.overflow = "scroll";
+  document.body.scroll = "yes";
 }
 
 // adding click to activate close modal function
