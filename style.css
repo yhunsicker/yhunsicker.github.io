@@ -292,12 +292,36 @@ h2 {
   text-decoration: none;
 }
 
+.social-media {
+  margin-top: 18px;
+}
+
 .p_commitment {
   font-weight: 300;
   width: 400px;
   line-height: 30px;
   font-size: 18px;
+  margin-top: 18px;
 }
+
+.p_connect {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  margin: 0;
+}
+
+.p_connect-social {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  margin: 0;
+}
+
+/* .email {
+  font-size: 18px;
+  font-weight: 300;
+} */
 
 ul {
   display: flex;
