@@ -254,21 +254,23 @@ h2 {
   column-gap: 40px;
   margin-top: 80px;
 }
+
 .case-container {
   display: flex;
   justify-content: center;
   column-gap: 30px;
-  transition-property: transform 300ms;
+  /* transition-property: transform; */
 }
 
 .case-container:hover #cardimage {
   transform: rotate(5deg);
+  /* transition: transform 0.5s; */
   cursor: pointer;
 }
 
 #cardimage {
   width: 350px;
-  /* transition-property: transform 300ms; */
+  transition: transform 300ms;
 }
 
 .card-tags {
@@ -280,6 +282,10 @@ h2 {
 
 .project_card {
   font-weight: bold;
+}
+
+.card-content:hover {
+  cursor: pointer;
 }
 
 .p-card {
