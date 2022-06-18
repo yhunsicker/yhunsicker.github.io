@@ -40,7 +40,7 @@ a:hover {
 }
 
 /* header */
-.header {
+#navigation {
   margin: 47px 150px 0;
   display: flex;
   justify-content: space-between;
@@ -60,7 +60,7 @@ a:hover {
   margin-right: 12px;
 }
 
-.navigation {
+.navigation-right {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -293,10 +293,6 @@ h2 {
   font-weight: 300;
 }
 
-/* footer */
-/* .footer-container {
-} */
-
 .row {
   display: flex;
   margin: 47px 150px 0;
@@ -366,4 +362,28 @@ li:hover {
   text-align: center;
   font-size: 18px;
   font-weight: 300;
+}
+
+.footer-bottom {
+  margin-top: 170px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.p-footer {
+  font-weight: 300;
+}
+
+.heart-icon {
+  height: 20px;
+  fill: #b42d2f;
+  margin: 1px 5px 0;
 }
