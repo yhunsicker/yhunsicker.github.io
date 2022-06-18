@@ -140,7 +140,7 @@
               </div>
               <h3 id="massgov">
                 <!-- <a class="project_card" href="" -->
-                  Massachusettes State Government
+                Massachusettes State Government
               </h3>
               <p class="p-card">
                 testing sakdjfhsdkfh asdfjh sdfkhasdf as;lksjdf asdfljhsadf
@@ -246,14 +246,37 @@
     </div>
 
     <!-- modal-screen -->
-    <div id="overlay">
-      <div class="modal">
-        <div class="modal-message">
-          <p>sadfsadfasdfasdfadsaf</p>
-          <p>Enter password.</p>
-          <div class="modal-form">
-            <form action=""></form>
+    <div id="overlay"></div>
+
+    <div class="modal-mask"></div>
+
+      <div class="modal-container password">
+        <div class="modal-header">
+          <h3 class="password-protected">Password protected</h3>
+          <button class="close">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+            <defs>
+              <path id="a" d="M9.103 7.005L14 2.109 11.92 0 7 5.057 2.075 0 0 2.11 4.974 7 0 11.897 2.075 14 7 9.086 11.92 14 14 11.897z"></path>
+            </defs>
+            <use fill="#5A6367" fill-rule="evenodd" transform="translate(9 9)" xlink:href="#a"></use>
+          </svg></button>
+        </div>
+        <div class="modal-body">
+          <p>Please enter the password to view my case study</p>
+          <div class="password-box">
+            <input type="hidden" name="_csrf" value="de0128f9-24ce-46df-b9f8-0282020a2289">
+            <input class="ufo-form--handler" name="password" type="password" autocomplete="off" placeholder="Enter Password…" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
           </div>
+        </div>
+        <form class="password-form">
+          <div class=""></div>
+          <div class="modal-submit">
+            <div class="button">
+							<button class="submit-button" type="submit">OK</button>
+						</div>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- javascript -->

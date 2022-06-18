@@ -23,10 +23,11 @@ function overLay() {
 }
 
 function openModal() {
-  console.log("modal opened");
+  document.getElementById("modal").style.display = "block";
 }
 massgov.addEventListener("click", overLay);
+massgov.addEventListener("click", openModal);
 
-function off() {
-  document.getElementById("overlay").style.display = "none";
-}
+// function off() {
+//   document.getElementById("overlay").style.display = "none";
+// }
