@@ -43,10 +43,10 @@
         <div title="return to homepage">Yu-Li Hunsicker</div>
       </a>
       <div class="navigation">
-       <a class="nav_link" title="About" href="/About">About</a>
-        <a class="nav_link" title="Portfolio" href="/Portfolio">Projects</a>
-       <a class="nav_link" title="Resume" href="/Resume">Resume</a>
-       <a class="nav_link" title="Let's Connect" href="/LetsConnect">Let's Connect</a>
+       <p><a class="nav_link" title="About" href="/About">About</a></p>
+        <p><a class="nav_link" title="Portfolio" href="/Portfolio">Projects</a></p>
+       <p><a class="nav_link" title="Resume" href="/Resume">Resume</a></p>
+       <p><a class="nav_link" title="Let's Connect" href="/LetsConnect">Let's Connect</a></p>
       </div>
     </div>
     <!-- Main content -->
@@ -86,10 +86,10 @@
           <div class="card">
             <!-- <hr class="line" /> -->
             <h3 aria-describedby="mentorship">
-              <a href="">Mentorship</a>
+              <a class="card_title" href="">Mentorship</a>
             </h3>
-            <p id="mentorship">
-              Let's chat! Schedule a call with me on calendly.
+            <p class="p_services">
+              If you're transitioning into a design career, I'm here to help regardless of your skill level or background.
             </p>
             <aside class="participant" role="note">
               <span class="sr-only">This is for</span> Students
@@ -100,10 +100,10 @@
           <div class="card">
             <!-- <hr class="line" /> -->
             <h3 aria-describedby="mentorship">
-              <a href="">Mentorship</a>
+              <a class="card_title" href="">Pro Bono</a>
             </h3>
-            <p id="mentorship">
-              Let's chat! Schedule a call with me on calendly.
+            <p class="p_services">
+              If your nonprofit needs UX/UI assistance, website overhaul, or an accessibility audit; please email me and let's team up to make a difference. 
             </p>
             <aside class="participant" role="note">
               <span class="sr-only">This is for</span> Students
@@ -114,10 +114,9 @@
           <div class="card">
             <!-- <hr class="line" /> -->
             <h3 aria-describedby="mentorship">
-              <a href="">Mentorship</a>
+              <a class="card_title" href="">Freelance</a>
             </h3>
-            <p id="mentorship">
-              Let's chat! Schedule a call with me on calendly.
+            <p class="p_services"> Learn how I can design or build for your business or cause. 
             </p>
             <aside class="participant" role="note">
               <span class="sr-only">This is for</span> Students
@@ -129,17 +128,20 @@
       <div class="work-container">
         <h2>Case studies and recent work</h2>
         <div class="case-studies-cards">
+          <div class="case-container">
           <img id="cardimage" src="./images/massgov.png" alt="" />
           <div class="card-content">
             <div class="card-tags">
-              <div class="cart-tag text-sm">UX/UI</div>
-              <div class="cart-tag text-sm">Accessiblity</div>
+              <div class="card-tag text-sm">UX/UI</div>
+              <div class="card-tag text-sm">Inclusive design</div>
+              <div class="card-tag text-sm">Feature shipping</div>
             </div>
-            <h3>Massachusettes State Government</h3>
+            <h3><a class="project_card" href="">Massachusettes State Government</a></h3>
             <p class="p-card">
               testing sakdjfhsdkfh asdfjh sdfkhasdf as;lksjdf asdfljhsadf asdkfh
               asdkjfasdkfjhasd
             </p>
+          </div>
           </div>
         </div>
         <div class="case-studies-cards">
@@ -160,7 +162,7 @@
           <div class="card-content">
             <div class="card-tags">
               <div class="card-tag text-sm">UX/UI</div>
-              <div class="card-tag text-sm">Accessiblity</div>
+              <div class="card-tag text-sm">Accessibility audit</div>
               <div class="card-tag text-sm">Design System</div>
               <div class="card-tag text-sm">Responsive Design</div>
               
@@ -179,8 +181,8 @@
           <h2 class="sr-only">Footer</h2>
           <div class="row">
             <div class="">
-              <h3>My commitment to accessibility</h3>
-              <p>
+              <h3 class="footer-h3">My commitment to accessibility</h3>
+              <p class="p_commitment">
                 My
                 <a href="accessibility.html">accessibility statement</a>
                 explains my commitment towards inclusion and how I plan to do
@@ -188,7 +190,7 @@
               </p>
             </div>
             <div class="">
-              <h3>Let's Connect</h3>
+              <h3 class="footer-h3">Let's Connect</h3>
               <p>
                 <a href="">Email me</a> at placeholder@gmail.com</p>
                 <p><a href="">Connect with me on LinkedIn</a></p>
@@ -199,7 +201,7 @@
           <div class="row">
             <div class="">
                 <nav aria-label="footer">
-                    <h3>Quick Links</h3>
+                    <h3 class="footer-h3">Quick Links</h3>
                     <ul role="list">
                         <li><a href="">Home</a></li>
                         <li><a href="">About</a></li>
@@ -222,5 +224,10 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script> -->
+      
+<canvas class="background"
+></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
