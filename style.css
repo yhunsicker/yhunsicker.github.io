@@ -420,7 +420,6 @@ li:hover {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  position: relative;
   z-index: 1;
   top: 50%;
   transform: translateY(-50%);
@@ -428,9 +427,13 @@ li:hover {
   border-radius: 3px;
   box-shadow: 0 2px 8px rgb(0 0 0 / 33%);
   transition: all 0.3s ease;
+  position: relative;
 }
+
 .modal-header {
-  padding: 30px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-bottom: 10px;
   border: none;
   align-items: left;
   display: block;
@@ -451,42 +454,30 @@ li:hover {
   margin-left: 30px;
 }
 
-.password-form {
-  padding: 0px 30px;
-  margin-bottom: 30px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.password-box {
-  display: flex;
-  align-items: center;
-}
-
-.password-form p {
-  margin-bottom: 20px;
-}
-
-.modal-submit {
-  padding: 10px 10px 10px 10px;
-  border: none;
-  clear: both;
-  position: relative;
-}
-
-.modal-submit .button {
-  width: 44px;
-  height: 44px;
+.form-box {
+  width: 60%;
+  padding: 14px 16px;
+  border: solid 1px #edf0f1;
+  border-radius: 1px;
+  line-height: 1.25;
 }
 
 .submit-button {
-  height: 44px;
-  width: 60px;
+  height: 46px;
+  width: 70px;
   text-align: center;
   color: black;
   border-radius: 2px;
   cursor: pointer;
   background-color: rgba(100, 200, 200, 1);
   border-style: none;
+}
+
+.password-placeholder {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 30px;
+  padding-top: 10px;
 }
