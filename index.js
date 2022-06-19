@@ -18,6 +18,7 @@ window.onload = function () {
 const modal = document.getElementById("massgov");
 const modalOverLay = document.getElementById("overlay");
 const exit = document.querySelector(".close");
+const submit = document.querySelector(".submit-button");
 
 // select overlay for the modal to appear and stop background scrolling
 function overLay() {
@@ -36,6 +37,23 @@ modal.addEventListener("click", overLay);
 modalOverLay.addEventListener("click", openModal);
 
 // set function of close modal and allow scrolling to continue
+
+// give a variable a password string
+const acceptedPassword = "1234";
+const pw = document.getElementById("passwordInput");
+const resultP = document.querySelector("#result");
+
+// function onSubmit(event) {
+//   console.log("event");
+// password = document.getElementById("passwordInput").value;
+
+//   if (document.getElementById("pw").value === "1234") {
+//   } else {
+//     resultText("Access Denied, Please try again");
+//   }
+//   resultP.innerText = resultText;
+// }
+
 function closeModal() {
   document.getElementById("overlay").style.display = "none";
   document.getElementById("massgov").style.display = "none";
@@ -46,4 +64,8 @@ function closeModal() {
 // adding click to activate close modal function
 if (exit) {
   exit.addEventListener("click", closeModal);
+}
+
+if (submit) {
+  submit.addEventListener("click", closeModal);
 }
