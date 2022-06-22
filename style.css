@@ -299,6 +299,21 @@ h2 {
   cursor: pointer;
 }
 
+#massgov a {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#pega a {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#bi a {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .p-card {
   width: 100%;
   font-weight: 300;
