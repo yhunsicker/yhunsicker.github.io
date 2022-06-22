@@ -53,7 +53,7 @@ function onSubmit(event) {
     closeModal();
   } else {
     resultP.innerText = "Access Denied, Please try again";
-    console.log();
+    // console.log();
   }
 }
 
@@ -68,7 +68,3 @@ function closeModal() {
 if (exit) {
   exit.addEventListener("click", closeModal);
 }
-
-// if (submit) {
-//
-// }
