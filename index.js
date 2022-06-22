@@ -43,16 +43,19 @@ const acceptedPassword = "1234";
 const pw = document.getElementById("passwordInput");
 const resultP = document.querySelector("#result");
 
-// function onSubmit(event) {
-//   console.log("event");
-// password = document.getElementById("passwordInput").value;
+// when user presses submit they have either of two things happen. If they enter the wrong info, they get a notification of "access denied". If they add password is correct, user is able to press submit to disable modal/overlay.
 
-//   if (document.getElementById("pw").value === "1234") {
-//   } else {
-//     resultText("Access Denied, Please try again");
-//   }
-//   resultP.innerText = resultText;
-// }
+function onSubmit(event) {
+  console.log("event");
+  password = document.getElementById("passwordInput").value;
+
+  if (document.getElementById("resultPw").value === "1234") {
+    closeModal();
+  } else {
+    resultP.innerText = "Access Denied, Please try again";
+    console.log();
+  }
+}
 
 function closeModal() {
   document.getElementById("overlay").style.display = "none";
@@ -66,6 +69,6 @@ if (exit) {
   exit.addEventListener("click", closeModal);
 }
 
-if (submit) {
-  submit.addEventListener("click", closeModal);
-}
+// if (submit) {
+//
+// }
