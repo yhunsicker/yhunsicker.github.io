@@ -52,7 +52,9 @@ function onSubmit(event) {
   if (document.getElementById("resultPw").value === "1234") {
     closeModal();
   } else {
-    resultP.innerText = "Access Denied, Please try again";
+    resultP.innerText = "Access denied, please try again.";
+    result.style.color = "red";
+    document.querySelector(".form-box").style.borderColor = "red";
     // console.log();
   }
 }
