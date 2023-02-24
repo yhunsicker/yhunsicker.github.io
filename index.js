@@ -39,7 +39,7 @@ modalOverLay.addEventListener("click", openModal);
 // set function of close modal and allow scrolling to continue
 
 // give a variable a password string
-const acceptedPassword = "1234";
+const acceptedPassword = "puppy-jam-sesh";
 const pw = document.getElementById("passwordInput");
 const resultP = document.querySelector("#result");
 
@@ -49,7 +49,7 @@ function onSubmit(event) {
   console.log("event");
   password = document.getElementById("passwordInput").value;
 
-  if (document.getElementById("resultPw").value === "1234") {
+  if (document.getElementById("resultPw").value === "puppy-jam-sesh") {
     closeModal();
   } else {
     resultP.innerText = "I'm sorry the password is, please try again.";
@@ -71,3 +71,17 @@ if (exit) {
   exit.addEventListener("click", closeModal);
 }
 I;
+
+// // Get the input field
+// let enter = document.getElementByClassName("submit-button");
+
+// // Execute a function when the user presses a key on the keyboard
+// input.addEventListener("keypress", function (event) {
+//   // If the user presses the "Enter" key on the keyboard
+//   if (event.key === "Enter") {
+//     // Cancel the default action, if needed
+//     event.preventDefault();
+//     // Trigger the button element with a click
+//     document.getElementByClassName("submit-button").click();
+//   }
+// });
