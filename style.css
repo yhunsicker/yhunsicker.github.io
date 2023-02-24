@@ -372,11 +372,12 @@ h2 {
 } */
 
 ul {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   column-gap: 30px;
   list-style-type: none;
   padding-left: 0;
+  line-height: 30px;
 }
 
 li {
