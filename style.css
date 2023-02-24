@@ -309,6 +309,11 @@ h2 {
   cursor: pointer;
 }
 
+#seramount a {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 #massgov a {
   font-size: 24px;
   font-weight: bold;
