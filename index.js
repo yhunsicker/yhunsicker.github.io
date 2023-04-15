@@ -15,7 +15,7 @@ window.onload = function () {
 // Lock screen
 // When the user "clicks" on Massachusettes State Government, a modal shows with a message & password.
 
-const modal = document.getElementById("seramount");
+const modal = document.getElementById("massgov");
 const modalOverLay = document.getElementById("overlay");
 const exit = document.querySelector(".close");
 const submit = document.querySelector(".submit-button");
@@ -29,7 +29,7 @@ function overLay() {
 
 // select massgov for the modal to appear
 function openModal() {
-  document.getElementById("seramount").style.display = "block";
+  document.getElementById("massgov").style.display = "block";
 }
 
 // adding click for to overlay and massgov functions
@@ -61,7 +61,7 @@ function onSubmit(event) {
 
 function closeModal() {
   document.getElementById("overlay").style.display = "none";
-  document.getElementById("seramount").style.display = "none";
+  document.getElementById("massgov").style.display = "none";
   document.documentElement.style.overflow = "scroll";
   document.body.scroll = "yes";
 }

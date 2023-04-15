@@ -171,7 +171,7 @@ h1 {
   border: 0;
 }
 
-/* card lists */
+/* card lists
 .card-container {
   width: 350px;
   margin-bottom: 2em;
@@ -199,10 +199,10 @@ h1 {
 .card:hover {
   background-size: 0 10px, 100% 10px;
   /* background-color: #ffe66b; */
-  cursor: pointer;
-}
+/* cursor: pointer;
+} */
 
-.services-container {
+/* .services-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -216,17 +216,17 @@ h3 {
   padding: 10px 0 0 0;
   margin: 0;
   padding-top: 16px;
-  /* text-decoration: underline; */
+  text-decoration: underline;
 }
 
-.card_title {
+/* .card_title {
   font-size: 24px;
   font-weight: bold;
-}
+} */
 
-h3:hover {
+/* h3:hover {
   text-decoration: none;
-}
+} */
 
 .p-card {
   line-height: 30px;
@@ -237,17 +237,17 @@ h3:hover {
   width: 800px;
 }
 
-.p_services {
+/* .p_services {
   font-size: 18px;
   font-weight: 300;
   line-height: 30px;
-}
+} */
 
-.participant {
+/* .participant {
   margin-top: 10px;
   color: black;
   margin: 0;
-}
+} */
 
 /* media-tablet */
 
@@ -312,21 +312,25 @@ h2 {
 #seramount a {
   font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 #massgov a {
   font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 #pega a {
   font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 #bi a {
   font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .p-card p {
@@ -340,6 +344,16 @@ h2 {
   margin: 47px 150px 0;
   column-gap: 50px;
 }
+
+/* .freetime-container p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: -0.2px;
+  margin: 0;
+  width: 500px;
+  margin-left: 100px;
+} */
 
 .footer-h3 {
   text-decoration: none;
