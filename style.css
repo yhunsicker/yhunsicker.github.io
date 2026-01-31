@@ -174,8 +174,8 @@ body:has(.skip-main:focus) .homenav {
 
 h1 {
   font-size: var(--font-size-2xl);
-  line-height: 1;
-  font-weight: 900;
+  line-height: 1.2;
+  font-weight: 550;
   letter-spacing: 0.8px;
   margin: 47px var(--container-padding) 0;
 }
