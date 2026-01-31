@@ -168,16 +168,33 @@ body:has(.skip-main:focus) .homenav {
   text-decoration: none;
 }
 
+/* Ensure nav links meet 44x44 touch target */
+.homenav ul li a,
+.homenav a.nav_link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+}
+
+/* .homenav ul {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+} */
+
 /* ============================================
    HEADINGS
    ============================================ */
 
 h1 {
-  font-size: 3.75rem;
+  font-size: clamp(2rem, 6vw, 3.75rem);
   line-height: 1.2;
   font-weight: 550;
   letter-spacing: 0.8px;
   margin: 47px var(--container-padding) 0;
+  max-width: 100%;
 }
 
 h2 {
@@ -219,6 +236,7 @@ p {
 .header-hero h1 {
   margin: 40px 0 40px 0 !important;
   max-width: 800px;
+  width: 100%;
   padding: 0 !important;
 }
 
@@ -257,6 +275,14 @@ p {
   letter-spacing: -0.2px;
   margin: 0;
   width: 500px;
+}
+
+/* Responsive tweaks for header h1 */
+@media (max-width: 420px) {
+  .header-hero h1 {
+    max-width: 420px;
+    font-size: 1.6rem;
+  }
 }
 
 .profile-picture {
