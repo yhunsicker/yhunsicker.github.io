@@ -19,13 +19,13 @@
   --line-height-base: 1.5rem;
 
   /* spacing */
-  --spacing-xs: 0.25rem;
+  /* --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 3rem;
   --container-width: 1200px;
-  --container-padding: 150px;
+  --container-padding: 150px; */
 }
 
 /* ============================================
@@ -117,8 +117,8 @@ body:has(.skip-main:focus) .homenav {
 .container {
   max-width: 1200px;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: clamp(15px, 5vw, 100px);
+  padding-left: clamp(15px, 5vw, 100px);
   margin: 0 auto;
 }
 
