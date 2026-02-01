@@ -185,7 +185,7 @@ body:has(.skip-main:focus) .homenav {
   .homenav ul {
     flex: 0 1 auto;
     display: flex;
-    gap: 8px;
+    gap: 5px;
     align-items: center;
     margin-left: 0;
     padding-left: 0;
@@ -201,13 +201,30 @@ body:has(.skip-main:focus) .homenav {
   }
 }
 
+/* tighten spacing between logo and text on small screens */
+@media screen and (max-width: 480px) {
+  .logo {
+    margin-right: 4px !important;
+    height: 36px;
+    width: 36px;
+    vertical-align: middle;
+  }
+  .nav-brand {
+    font-size: var(--font-size-md);
+    gap: 4px !important;
+  }
+  .nav-brand span {
+    margin-left: 0 !important;
+  }
+}
+
 .nav-brand {
   display: flex;
   align-items: center;
   text-decoration: none;
   font-size: var(--font-size-lg);
   font-weight: 350;
-  color: black;
+  color: var(--text-color);
 }
 
 .logo {
@@ -251,7 +268,7 @@ body:has(.skip-main:focus) .homenav {
 }
 
 .nav_link {
-  color: black;
+  color: var(--text-color);
   text-decoration: underline;
 }
 
@@ -324,10 +341,17 @@ p {
   width: 100%;
 }
 
+@media (max-width: 480px) {
+  .header-hero {
+    min-height: auto;
+    padding-top: 20px;
+  }
+}
+
 .header-hero h1 {
-  margin: 40px 0 40px 0 !important;
+  margin: 40px 0 40px 0;
   max-width: 100%;
-  width: 100%;
+  width: 80%;
   padding: 0 !important;
 }
 
@@ -336,14 +360,14 @@ p {
   font-weight: 850;
 }
 
-.
-
 /* Responsive tweaks for header h1 */
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   .header-hero h1 {
-    margin-top: 20px !important;
     font-size: 2.5rem;
     line-height: 1.5;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
 }
 
