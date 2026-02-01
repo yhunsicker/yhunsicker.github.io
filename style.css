@@ -10,8 +10,8 @@
   /* font family */
   --font-family-sans: "DM Sans", sans-serif;
   --font-family-mono: "DM Mono", monospace;
-  --font-size-base: 18px;
-  --font-size-sm: 0.875rem;
+  --font-size-base: 16px;
+  --font-size-sm: 1rem;
   --font-size-md: 1.125rem;
   --font-size-lg: 1.5rem;
   --font-size-xl: 2.5rem;
@@ -94,7 +94,7 @@ a:hover {
 .skip-main:focus {
   top: 12px;
   left: 12px;
-  padding: 8px 8px;
+  /* padding: 8px 8px; */
 }
 
 /* ============================================
@@ -226,7 +226,7 @@ body:has(.skip-main:focus) .homenav {
   font-size: var(--font-size-lg);
   font-weight: 350;
   color: var(--text-color);
-  padding: 8px 8px;
+  /* padding: 8px 8px; */
 }
 
 .logo {
@@ -284,7 +284,7 @@ body:has(.skip-main:focus) .homenav {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  padding: 8px 8px;
+  /* padding: 8px 8px; */
   box-sizing: border-box;
 }
 
@@ -366,7 +366,7 @@ p {
 @media (max-width: 480px) {
   .header-hero h1 {
     font-size: 2.5rem;
-    line-height: 1.5;
+    line-height: 1.2;
     width: 100%;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -612,27 +612,27 @@ li:hover {
 
 @media screen and (max-width: 768px) {
   .footer-bottom {
-    margin-top: 80px;
+    /* margin-top: 80px; */
     padding: 18px 12px;
     flex-direction: column;
     gap: 6px;
-    font-size: var(--font-size-sm);
+    /* font-size: var(--font-size-md); */
     white-space: normal;
   }
 }
 
 @media screen and (max-width: 480px) {
   .footer-bottom {
-    margin-top: 40px;
-    padding: 14px 12px;
-    font-size: var(--font-size-sm);
+    /* margin-top: 40px; */
+    /* padding: 14px 12px; */
+    font-size: var(--font-size-md);
   }
 }
 
 /* /crafted by me// */
 .p-footer {
   font-weight: 300;
-  font-size: var(--font-size-md);
+  font-size: 1rem;
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
@@ -643,7 +643,7 @@ li:hover {
 
 @media screen and (max-width: 480px) {
   .p-footer {
-    font-size: var(--font-size-sm);
+    font-size: 1rem;
     max-width: calc(100% - 32px);
     padding: 0 12px;
     line-height: 1.5rem;
