@@ -103,7 +103,7 @@ a:hover {
 
 .skip-main:focus ~ .homenav,
 body:has(.skip-main:focus) .homenav {
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 /* .skip-main:focus + .header .homenav,
