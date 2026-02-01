@@ -94,6 +94,7 @@ a:hover {
 .skip-main:focus {
   top: 12px;
   left: 12px;
+  padding: 8px 8px;
 }
 
 /* ============================================
@@ -105,10 +106,10 @@ body:has(.skip-main:focus) .homenav {
   margin-top: 80px;
 }
 
-.skip-main:focus + .header .homenav,
+/* .skip-main:focus + .header .homenav,
 body:has(.skip-main:focus) .homenav {
   margin-top: 50px;
-}
+} */
 
 .header {
   position: sticky;
@@ -133,7 +134,7 @@ body:has(.skip-main:focus) .homenav {
   align-items: center;
   transition: margin-top 0.1s ease;
   width: 100%;
-  padding-top: 20px;
+  padding: 20px 0px;
   /* margin: 0 auto; */
 }
 
@@ -225,6 +226,7 @@ body:has(.skip-main:focus) .homenav {
   font-size: var(--font-size-lg);
   font-weight: 350;
   color: var(--text-color);
+  padding: 8px 8px;
 }
 
 .logo {
@@ -282,7 +284,7 @@ body:has(.skip-main:focus) .homenav {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  padding: 8px 12px;
+  padding: 8px 8px;
   box-sizing: border-box;
 }
 
