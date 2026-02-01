@@ -80,9 +80,9 @@ a:hover {
   background: white;
   color: black;
   padding: var(--spacing-sm) var(--spacing-md);
-  text-decoration: none;
+  text-decoration: underline;
   z-index: 1000;
-  border: 1px solid black;
+  border: none;
   font-size: var(--font-size-md);
 }
 
@@ -130,6 +130,85 @@ body:has(.skip-main:focus) .homenav {
   width: 100%;
   padding-top: 20px;
   /* margin: 0 auto; */
+}
+
+/* allow nav items to wrap and keep spacing consistent */
+.homenav {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ensure nav lists don't show bullets and are laid out horizontally */
+.homenav ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Responsive navigation: keep container spacing and adapt layout */
+@media screen and (max-width: 768px) {
+  .homenav {
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+  }
+  .homenav .nav-brand {
+    flex: 0 1 auto;
+  }
+  .homenav ul {
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Keep nav on a single row at small widths so links stay level with logo */
+  .homenav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding-top: 8px;
+  }
+  .homenav .nav-brand {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .homenav ul {
+    flex: 0 1 auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .homenav ul li {
+    margin: 0;
+  }
+  .homenav ul li a {
+    padding: 6px 10px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Ensure header-hero and homenav align to the same container padding */
+.header .container,
+.container {
+  box-sizing: border-box;
+}
+.header-hero {
+  padding-left: 0;
+  padding-right: 0;
+}
+.homenav {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .nav-brand {
@@ -256,6 +335,7 @@ p {
 
 .header-hero h1 {
   margin: 40px 0 40px 0 !important;
+  max-width: 100%;
   width: 100%;
   padding: 0 !important;
 }
@@ -427,7 +507,7 @@ p {
    FOOTER
    ============================================ */
 
-.footer-h3 {
+/* .footer-h3 {
   text-decoration: none;
 }
 
@@ -472,9 +552,9 @@ li {
 
 li:hover {
   text-decoration: none;
-}
+} */
 
-.footer-label {
+/* .footer-label {
   margin-top: 80px;
   margin-bottom: 40px;
   opacity: 0.9;
@@ -485,10 +565,10 @@ li:hover {
   text-align: center;
   font-size: var(--font-size-md);
   font-weight: 300;
-}
+} */
 
 .footer-bottom {
-  margin-top: 170px;
+  margin-top: 120px;
   margin-bottom: 20px;
   opacity: 0.9;
   color: black;
@@ -496,13 +576,39 @@ li:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  max-width: 100%;
-  white-space: nowrap;
+  width: 100%;
+  padding: 24px 15px;
+  box-sizing: border-box;
+  white-space: normal;
   cursor: pointer;
+  border-top: none;
+  gap: 8px;
+  font-size: var(--font-size-md);
 }
 
+@media screen and (max-width: 768px) {
+  .footer-bottom {
+    margin-top: 80px;
+    padding: 18px 12px;
+    flex-direction: column;
+    gap: 6px;
+    font-size: var(--font-size-sm);
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-bottom {
+    margin-top: 40px;
+    padding: 14px 12px;
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* /crafted by me// */
 .p-footer {
   font-weight: 300;
+  font-size: var(--font-size-md);
 }
 
 .heart-icon {
