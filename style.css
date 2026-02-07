@@ -378,6 +378,7 @@ h3 {
   justify-content: left;
   align-items: left;
   width: 100%;
+  margin-top: var(--spacing-15);
 }
 
 .header-work h2 {
@@ -392,9 +393,9 @@ h3 {
    WORK & PROJECT CARDS
    ============================================ */
 
-.project-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+.project-list {
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-12);
   width: 100%;
   margin-top: var(--spacing-12);
@@ -437,6 +438,7 @@ h3 {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .project-thumbnail-secondary {
@@ -445,13 +447,15 @@ h3 {
   left: 0;
   z-index: 0;
   opacity: 0;
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
+  will-change: opacity;
 }
 
 .project-thumbnail-primary {
   position: relative;
   z-index: 1;
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
+  will-change: opacity;
 }
 
 .project-thumbnail-wrapper:hover .project-thumbnail-secondary {
@@ -505,13 +509,88 @@ h3 {
   .project-card-image {
     width: 100%;
     min-width: auto;
-    height: 250px;
+    height: 280px;
+    order: 2;
+  }
+
+  .project-card-content {
+    order: 1;
+  }
+}
+
+/* ============================================
+   SPEAKING & WRITING
+   ============================================ */
+
+.speaking-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-6);
+  width: 100%;
+  margin-top: var(--spacing-12);
+}
+
+.speaking-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 calc(33.333% - var(--spacing-6));
+  min-width: 250px;
+  max-width: calc(33.333% - var(--spacing-6));
+  padding: var(--spacing-6);
+  border: 1px solid var(--color-evergreen-400);
+  border-radius: 12px;
+  background: var(--color-cream-50);
+}
+
+.speaking-tag {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  padding: var(--spacing-1) var(--spacing-2);
+  color: var(--color-bg);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-3);
+  width: fit-content;
+}
+
+.speaking-tag.blog {
+  background-color: var(--color-primary);
+}
+
+.speaking-tag.talk {
+  background-color: var(--color-secondary);
+}
+
+.speaking-card h3 {
+  font-size: var(--font-size-base);
+  margin: 0 0 var(--spacing-2) 0;
+  padding: 0;
+}
+
+.speaking-meta {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+@media (max-width: 780px) {
+  .speaking-card {
+    flex: 0 1 calc(50% - var(--spacing-6));
+    max-width: calc(50% - var(--spacing-6));
   }
 }
 
 @media (max-width: 480px) {
-  .project-cards {
-    grid-template-columns: 1fr;
+  .speaking-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: auto;
+  }
+}
+@media (max-width: 480px) {
+  .project-list {
+    flex-direction: column;
     gap: var(--spacing-6);
   }
 }
