@@ -431,6 +431,8 @@ h3 {
   position: relative;
   width: 100%;
   height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .project-thumbnail-primary,
@@ -439,6 +441,7 @@ h3 {
   height: 100%;
   display: block;
   object-fit: cover;
+  border-radius: inherit;
 }
 
 .project-thumbnail-secondary {
@@ -504,6 +507,7 @@ h3 {
 @media (max-width: 768px) {
   .project-card {
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .project-card-image {
@@ -515,6 +519,19 @@ h3 {
 
   .project-card-content {
     order: 1;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 420px) {
+  .project-card-image {
+    height: auto;
+  }
+
+  .project-thumbnail-primary,
+  .project-thumbnail-secondary {
+    object-fit: contain;
   }
 }
 
