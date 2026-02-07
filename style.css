@@ -446,7 +446,6 @@ h3 {
   border-color: transparent;
 }
 
-/* 2. Horizontal Lines (Top & Bottom) */
 .project-card::before {
   content: "";
   position: absolute;
@@ -459,8 +458,6 @@ h3 {
   z-index: 2;
   pointer-events: none;
 }
-
-/* 3. Vertical Lines (Left & Right) */
 
 .project-card::after {
   content: "";
@@ -478,29 +475,25 @@ h3 {
 /* 4. Trigger the Animation */
 .project-card:hover::before,
 .project-card:focus-within::before {
-  transform: scaleX(1); /* Top and bottom lines grow to full width */
+  transform: scaleX(1);
 }
 
 .project-card:hover::after,
 .project-card:focus-within::after {
-  transform: scaleY(1); /* Left and right lines grow to full height */
+  transform: scaleY(1);
 }
 
-/* 5. Ensure Content Stays Above */
 .project-card-content,
 .project-card-image {
-  position: relative;
-  z-index: 3;
-}
-
-.project-card-image {
-  flex: 0 1 320px;
-  max-width: 320px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
+  .project-card-image {
+    position: relative;
+    z-index: 3;
+    flex: 0 1 auto;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .project-card-image img {
@@ -562,7 +555,6 @@ h3 {
   padding-left: var(--spacing-2);
 }
 
-/* Project card headings - override defaults */
 .project-card h3 {
   font-size: var(--font-size-lg);
   margin: var(--spacing-3) 0;
@@ -636,21 +628,6 @@ h3 {
   }
 }
 
-@media (max-width: 480px) {
-  .project-card-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .project-thumbnail-wrapper {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-}
-
 /* ============================================
    SPEAKING & WRITING
    ============================================ */
@@ -666,13 +643,11 @@ h3 {
 .speaking-card {
   display: flex;
   flex-direction: column;
-  /* Remove the 'flex: 0 1 calc(...)' math entirely */
   width: 100%;
   padding: var(--spacing-6);
   border: 1px solid var(--color-evergreen-400);
   border-radius: 12px;
   background: var(--color-cream-50);
-  /* Ensure box-sizing is correct so padding doesn't push the card out */
   box-sizing: border-box;
 }
 
@@ -739,7 +714,6 @@ h3 {
 }
 
 .footer-divider {
-  /* Remove width: 72% */
   width: 100%;
   padding: 0;
   max-width: 1200px;
@@ -757,7 +731,6 @@ h3 {
 
 .footer:hover .footer-divider,
 .footer:focus-within .footer-divider {
-  /* transform: scaleX(0.95); */
   border-color: var(--color-burgundy-500);
 }
 
