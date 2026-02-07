@@ -85,3 +85,25 @@ I;
 //     document.getElementByClassName("submit-button").click();
 //   }
 // });
+
+// Toggle project image on tap/click for touch devices
+document.addEventListener("DOMContentLoaded", () => {
+  const wrappers = document.querySelectorAll(".project-thumbnail-wrapper");
+  const isSmallScreen = () => window.matchMedia("(max-width: 780px)").matches;
+
+  wrappers.forEach((wrapper) => {
+    wrapper.addEventListener("click", (event) => {
+      if (!isSmallScreen()) {
+        return;
+      }
+
+      const card = wrapper.closest(".project-card");
+      if (!card) {
+        return;
+      }
+
+      event.preventDefault();
+      card.classList.toggle("is-toggled");
+    });
+  });
+});

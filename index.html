@@ -51,8 +51,7 @@
     <!-- Navigation -->
     <header class="header">
       <div class="container">
-        <nav class="homenav">
-          <a href="/" class="nav-brand" aria-current="page">
+        <nav class="homenav" aria-label="main">
             <img
               src="./images/logo.png"
               class="logo"
@@ -60,6 +59,7 @@
               aria-hidden="true"
             />
             <span lang="zh">玉立</span>
+            <span class="divider"></span>
           </a>
           <ul>
             <li>
@@ -176,7 +176,13 @@
     </main>
 
     <!-- Footer -->
+    
     <footer class="footer">
+       <h2 class="sr-only" style="scroll-margin-top: 50px;">Footer</h2>
+
+      <div class="container">
+    <div class="footer-divider" aria-hidden="true"></div> 
+      
       <div class="footer-bottom">
         <p class="p-footer">
           Painstakingly built with
