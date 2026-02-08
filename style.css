@@ -195,7 +195,7 @@ body:has(.skip-main:focus) .homenav {
 
 .homenav:hover .divider,
 .homenav:focus-within .divider {
-  transform: scaleX(0.95);
+  transform: scaleX(1);
   border-color: var(--color-burgundy-500);
 }
 
