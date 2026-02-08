@@ -16,66 +16,67 @@
 // Lock screen
 // When the user "clicks" on Massachusettes State Government, a modal shows with a message & password.
 
-const modal = document.getElementById("massgov");
-const modalOverLay = document.getElementById("overlay");
-const exit = document.querySelector(".close");
-const submit = document.querySelector(".submit-button");
+// const modal = document.getElementById("massgov");
+// const modalOverLay = document.getElementById("overlay");
+// const exit = document.querySelector(".close");
+// const submit = document.querySelector(".submit-button");
 
 // select overlay for the modal to appear and stop background scrolling
-function overLay() {
-  document.getElementById("overlay").style.display = "block";
-  document.documentElement.style.overflow = "hidden";
-  document.body.scroll = "no";
-}
+// function overLay() {
+//   document.getElementById("overlay").style.display = "block";
+//   document.documentElement.style.overflow = "hidden";
+//   document.body.scroll = "no";
+// }
 
 // select massgov for the modal to appear
-function openModal() {
-  document.getElementById("massgov").style.display = "block";
-}
+// function openModal() {
+//   document.getElementById("massgov").style.display = "block";
+// }
 
 // adding click for to overlay and massgov functions
-if (modal) {
-  modal.addEventListener("click", overLay);
-}
-if (modalOverLay) {
-  modalOverLay.addEventListener("click", openModal);
-}
+// if (modal) {
+//   modal.addEventListener("click", overLay);
+// }
+// if (modalOverLay) {
+//   modalOverLay.addEventListener("click", openModal);
+// }
 
 // set function of close modal and allow scrolling to continue
 
 // give a variable a password string
-const acceptedPassword = "puppy-jam-sesh";
-const pw = document.getElementById("passwordInput");
-const resultP = document.querySelector("#result");
+// const acceptedPassword = "puppy-jam-sesh";
+// const pw = document.getElementById("passwordInput");
+// const resultP = document.querySelector("#result");
 
 // when user presses submit they have either of two things happen. If they enter the wrong info, they get a notification of "access denied". If they add password is correct, user is able to press submit to disable modal/overlay.
 
-function onSubmit(event) {
-  console.log("event");
-  password = document.getElementById("passwordInput").value;
+// function onSubmit(event) {
+//   console.log("event");
+//   password = document.getElementById("passwordInput").value;
 
-  if (document.getElementById("resultPw").value === "puppy-jam-sesh") {
-    closeModal();
-  } else {
-    resultP.innerText = "I'm sorry the password is, please try again.";
-    result.style.color = "red";
-    document.querySelector(".form-box").style.borderColor = "red";
-    // console.log();
-  }
-}
+//   if (document.getElementById("resultPw").value === "puppy-jam-sesh") {
+//     closeModal();
+//   } else {
+//     resultP.innerText = "I'm sorry the password is, please try again.";
+//     result.style.color = "red";
+//     document.querySelector(".form-box").style.borderColor = "red";
+//     // console.log();
+//   }
+// }
 
-function closeModal() {
-  document.getElementById("overlay").style.display = "none";
-  document.getElementById("massgov").style.display = "none";
-  document.documentElement.style.overflow = "scroll";
-  document.body.scroll = "yes";
-}
+// function closeModal() {
+//   document.getElementById("overlay").style.display = "none";
+//   document.getElementById("massgov").style.display = "none";
+//   document.documentElement.style.overflow = "scroll";
+//   document.body.scroll = "yes";
+// }
 
 // adding click to activate close modal function
-if (exit) {
-  exit.addEventListener("click", closeModal);
-}
+// if (exit) {
+//   exit.addEventListener("click", closeModal);
+// }
 
+//darkmode theme script//
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".theme-toggle");
   if (!toggle) {
@@ -104,37 +105,37 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const particlesToggle = document.querySelector(".particles-toggle");
-  if (!particlesToggle) {
-    return;
-  }
+// document.addEventListener("DOMContentLoaded", () => {
+//   const particlesToggle = document.querySelector(".particles-toggle");
+//   if (!particlesToggle) {
+//     return;
+//   }
 
-  const applyParticlesState = (isPaused) => {
-    particlesToggle.setAttribute("aria-pressed", String(isPaused));
-    particlesToggle.textContent = isPaused
-      ? "Play animation"
-      : "Pause animation";
-  };
+//   const applyParticlesState = (isPaused) => {
+//     particlesToggle.setAttribute("aria-pressed", String(isPaused));
+//     particlesToggle.textContent = isPaused
+//       ? "Play animation"
+//       : "Pause animation";
+//   };
 
-  applyParticlesState(false);
+//   applyParticlesState(false);
 
-  particlesToggle.addEventListener("click", () => {
-    if (!particlesInstance) {
-      return;
-    }
+//   particlesToggle.addEventListener("click", () => {
+//     if (!particlesInstance) {
+//       return;
+//     }
 
-    const isPaused = particlesToggle.getAttribute("aria-pressed") === "true";
+//     const isPaused = particlesToggle.getAttribute("aria-pressed") === "true";
 
-    if (isPaused) {
-      particlesInstance.resumeAnimation();
-      applyParticlesState(false);
-    } else {
-      particlesInstance.pauseAnimation();
-      applyParticlesState(true);
-    }
-  });
-});
+//     if (isPaused) {
+//       particlesInstance.resumeAnimation();
+//       applyParticlesState(false);
+//     } else {
+//       particlesInstance.pauseAnimation();
+//       applyParticlesState(true);
+//     }
+//   });
+// });
 
 // // Get the input field
 // let enter = document.getElementByClassName("submit-button");
