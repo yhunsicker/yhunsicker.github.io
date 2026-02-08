@@ -115,6 +115,7 @@ body {
 a {
   color: var(--color-text);
   text-decoration: underline;
+  text-underline-offset: 3px;
   font-weight: 300;
   z-index: 1;
 }
@@ -188,16 +189,11 @@ body:has(.skip-main:focus) .homenav {
   align-self: center;
   background-color: var(--color-evergreen-400);
   margin: var(--spacing-2) var(--spacing-1);
-  transform: scaleX(1);
-  transform-origin: center;
-  transition:
-    transform 0.5s ease-out,
-    border-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
 }
 
 .divider:hover,
 .divider:focus-visible {
-  transform: scaleX(1);
   background-color: var(--color-burgundy-500);
 }
 
@@ -208,6 +204,44 @@ body:has(.skip-main:focus) .homenav {
   display: flex;
   gap: 12px;
   align-items: center;
+  flex: 0 0 auto;
+}
+
+.homenav ul li {
+  display: flex;
+  align-items: center;
+}
+
+.homenav .nav-brand-item {
+  gap: 8px;
+}
+
+.homenav .nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+}
+
+.homenav .nav-brand span[lang="zh"] {
+  line-height: 1;
+}
+
+.homenav .nav-divider {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  min-width: 24px;
+}
+
+.homenav .nav-divider .divider {
+  width: 100%;
+}
+
+.homenav [lang="zh"] {
+  font-family: var(--font-family-sans);
+  font-weight: 350;
+  font-size: var(--font-size-base);
 }
 
 .homenav .nav_link:hover {
@@ -225,8 +259,7 @@ body[data-theme="dark"] .homenav .nav_link:hover {
   border-radius: 12px;
 }
 
-.theme-toggle,
-.particles-toggle {
+.theme-toggle {
   font-size: var(--font-size-sm);
   font-weight: 300;
   color: var(--color-text);
@@ -240,8 +273,7 @@ body[data-theme="dark"] .homenav .nav_link:hover {
     color 0.2s ease;
 }
 
-.theme-toggle:hover,
-.particles-toggle:hover {
+.theme-toggle:hover {
   border-color: var(--color-burgundy-500);
 }
 
@@ -256,8 +288,7 @@ body[data-theme="dark"] .theme-toggle:hover {
   border-color: var(--color-evergreen-400);
 }
 
-.theme-toggle:focus-visible,
-.particles-toggle:focus-visible {
+.theme-toggle:focus-visible {
   border-color: var(--color-evergreen-400);
   outline: 2px solid var(--color-primary);
   outline-offset: 4px;
@@ -272,10 +303,6 @@ body[data-theme="dark"] .theme-toggle:hover {
     padding-top: 12px;
   }
 
-  .homenav .nav-brand {
-    flex: 0 1 auto;
-  }
-
   .homenav ul {
     margin-left: auto;
   }
@@ -288,13 +315,6 @@ body[data-theme="dark"] .theme-toggle:hover {
     align-items: center;
     gap: 8px;
     padding-top: 8px;
-  }
-
-  .homenav .nav-brand {
-    flex: 0 1 auto;
-    display: flex;
-    align-items: center;
-    gap: 8px;
   }
 
   .homenav ul {
@@ -318,15 +338,6 @@ body[data-theme="dark"] .theme-toggle:hover {
   }
 }
 
-.nav-brand {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-size: var(--font-size-base);
-  font-weight: 350;
-  color: var(--color-text);
-}
-
 .logo {
   height: 40px;
   width: 40px;
@@ -348,15 +359,6 @@ body[data-theme="dark"] .theme-toggle:hover {
     height: 36px;
     width: 36px;
     vertical-align: middle;
-  }
-
-  .nav-brand {
-    font-size: 1.2rem;
-    gap: 4px;
-  }
-
-  .nav-brand span {
-    margin-left: 0;
   }
 
   .homenav ul li a {
@@ -395,6 +397,13 @@ body[data-theme="dark"] .theme-toggle:hover {
 
 .container-work {
   margin-bottom: var(--spacing-18);
+}
+
+.container-speaking-writing {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
 }
 
 h1 {
@@ -468,10 +477,23 @@ h3 {
 .header-work {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: left;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   margin-top: var(--spacing-15);
+}
+
+.speaking-writing {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: var(--spacing-15);
+}
+
+.speaking-writing p {
+  max-width: 900px;
 }
 
 .header-work h2 {
@@ -491,7 +513,9 @@ h3 {
   flex-direction: column;
   gap: var(--spacing-12);
   width: 100%;
-  margin-top: var(--spacing-12);
+  margin: var(--spacing-12) 0 0;
+  padding-left: 0;
+  list-style: none;
 }
 
 .project-card {
@@ -508,7 +532,7 @@ h3 {
   background-color: var(--color-cream-50);
   border-radius: 16px;
   border: 1px solid var(--color-evergreen-400);
-  overflow: hidden;
+  overflow: visible;
   transition: border-color 0.6s ease;
   z-index: 1;
 }
@@ -556,17 +580,14 @@ h3 {
   transform: scaleY(1);
 }
 
-.project-card-content,
 .project-card-image {
-  .project-card-image {
-    position: relative;
-    z-index: 3;
-    flex: 0 1 auto;
-    max-width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  position: relative;
+  z-index: 3;
+  flex: 0 1 auto;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-card-image img {
@@ -634,15 +655,6 @@ h3 {
   padding: 0;
 }
 
-.project-description {
-  font-size: var(--font-size-base);
-  color: var(--color-text);
-  font-weight: 300;
-  line-height: 28px;
-  letter-spacing: -0.2px;
-  margin: 0;
-}
-
 .project-title {
   font-size: var(--font-size-sm);
   color: var(--color-text);
@@ -653,7 +665,10 @@ h3 {
 .project-description {
   font-size: var(--font-size-base);
   color: var(--color-text);
+  font-weight: 300;
   line-height: var(--line-height-md);
+  letter-spacing: -0.2px;
+  margin: 0;
 }
 
 @media (max-width: 780px) {
@@ -711,6 +726,8 @@ h3 {
   gap: var(--spacing-6);
   width: 100%;
   margin-top: var(--spacing-12);
+  padding-left: 0;
+  list-style: none;
 }
 
 .speaking-card {
@@ -722,6 +739,44 @@ h3 {
   border-radius: 12px;
   background: var(--color-cream-50);
   box-sizing: border-box;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.speaking-card:hover,
+.speaking-card:focus-within {
+  box-shadow: 0 8px 18px rgba(58, 53, 48, 0.18);
+  animation: speaking-card-wiggle 1s ease-in-out;
+}
+
+@keyframes speaking-card-wiggle {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  25% {
+    transform: rotate(-0.6deg) translateY(-1px);
+  }
+  50% {
+    transform: rotate(0.6deg) translateY(-1px);
+  }
+  75% {
+    transform: rotate(-0.4deg) translateY(0);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .speaking-card {
+    transition: box-shadow 0.2s ease;
+  }
+
+  .speaking-card:hover,
+  .speaking-card:focus-within {
+    animation: none;
+  }
 }
 
 .speaking-tag {
@@ -793,7 +848,6 @@ h3 {
   border-bottom: 1px solid var(--color-evergreen-400);
   height: 0;
   margin: var(--spacing-6) auto var(--spacing-6);
-  height: 0;
   box-sizing: border-box;
   transform: scaleX(1);
   transform-origin: center;
