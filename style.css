@@ -99,6 +99,10 @@ body[data-theme="light"] {
 body {
   color: var(--color-text);
   background-color: var(--color-bg);
+  line-height: 1.5;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Focus outlines only for keyboard users */
@@ -108,8 +112,13 @@ body {
 
 *:focus-visible {
   outline: 2px solid var(--color-primary);
-  outline-offset: 0;
-  border-radius: 12px;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -117,6 +126,9 @@ a {
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 300;
+  transition:
+    color 0.2s ease,
+    text-decoration 0.2s ease;
   z-index: 1;
 }
 
@@ -138,8 +150,8 @@ a:hover {
 
 .skip-main {
   position: absolute;
-  top: -120px;
-  left: 0;
+  top: -100px;
+  left: 12px;
   z-index: 1000;
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -147,6 +159,10 @@ a:hover {
   text-decoration: underline;
   font-size: var(--font-size-base);
   transition: top 0.2s ease;
+}
+
+.skip-main:hover {
+  color: var(--color-burgundy-500);
 }
 
 .skip-main:focus {
@@ -193,7 +209,7 @@ body:has(.skip-main:focus) .homenav {
 }
 
 .divider:hover,
-.divider:focus-visible {
+.homenav .nav-divider:hover .divider {
   background-color: var(--color-burgundy-500);
 }
 
@@ -232,6 +248,7 @@ body:has(.skip-main:focus) .homenav {
   display: flex;
   align-items: center;
   min-width: 24px;
+  padding: 6px 0;
 }
 
 .homenav .nav-divider .divider {
@@ -242,6 +259,11 @@ body:has(.skip-main:focus) .homenav {
   font-family: var(--font-family-sans);
   font-weight: 350;
   font-size: var(--font-size-base);
+}
+
+.homenav .nav-brand:hover [lang="zh"],
+.homenav .nav-brand:focus-visible [lang="zh"] {
+  color: var(--color-burgundy-500);
 }
 
 .homenav .nav_link:hover {
@@ -713,6 +735,25 @@ h3 {
   .project-thumbnail-primary,
   .project-thumbnail-secondary {
     object-fit: contain;
+  }
+}
+
+/* //reduced motion media query// */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+
+  .skip-main {
+    transition: none;
   }
 }
 

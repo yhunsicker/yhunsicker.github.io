@@ -79,9 +79,7 @@
 //darkmode theme script//
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".theme-toggle");
-  if (!toggle) {
-    return;
-  }
+  if (!toggle) return;
 
   const storageKey = "theme";
   const prefersDark = () =>
@@ -89,17 +87,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const applyTheme = (theme) => {
     document.body.setAttribute("data-theme", theme);
+
+    // 1. Remove aria-pressed (since the label itself changes)
+    toggle.removeAttribute("aria-pressed");
+
+    // 2. Set the text to the OPPOSITE of the current theme
+    // If it's dark, show "Light mode". If it's light, show "Dark mode".
     const isDark = theme === "dark";
-    toggle.setAttribute("aria-pressed", String(isDark));
     toggle.textContent = isDark ? "Light mode" : "Dark mode";
+
+    // 3. Update aria-label for clarity (Optional)
+    toggle.setAttribute(
+      "aria-label",
+      isDark ? "Switch to light mode" : "Switch to dark mode",
+    );
   };
 
   const savedTheme = localStorage.getItem(storageKey);
-  applyTheme(savedTheme || (prefersDark() ? "dark" : "light"));
+  const initialTheme = savedTheme || (prefersDark() ? "dark" : "light");
+  applyTheme(initialTheme);
 
   toggle.addEventListener("click", () => {
-    const nextTheme =
-      document.body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    const currentTheme = document.body.getAttribute("data-theme");
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
     localStorage.setItem(storageKey, nextTheme);
     applyTheme(nextTheme);
   });
