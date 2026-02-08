@@ -1,6 +1,8 @@
 // particles script
+// let particlesInstance;
+
 // window.onload = function () {
-//   Particles.init({
+//   particlesInstance = Particles.init({
 //     selector: ".background",
 //     sizeVariations: 6,
 //     maxParticles: 160,
@@ -10,7 +12,6 @@
 //     connectParticles: false,
 //   });
 // };
-// 1;
 
 // Lock screen
 // When the user "clicks" on Massachusettes State Government, a modal shows with a message & password.
@@ -33,8 +34,12 @@ function openModal() {
 }
 
 // adding click for to overlay and massgov functions
-modal.addEventListener("click", overLay);
-modalOverLay.addEventListener("click", openModal);
+if (modal) {
+  modal.addEventListener("click", overLay);
+}
+if (modalOverLay) {
+  modalOverLay.addEventListener("click", openModal);
+}
 
 // set function of close modal and allow scrolling to continue
 
@@ -70,7 +75,66 @@ function closeModal() {
 if (exit) {
   exit.addEventListener("click", closeModal);
 }
-I;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".theme-toggle");
+  if (!toggle) {
+    return;
+  }
+
+  const storageKey = "theme";
+  const prefersDark = () =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  const applyTheme = (theme) => {
+    document.body.setAttribute("data-theme", theme);
+    const isDark = theme === "dark";
+    toggle.setAttribute("aria-pressed", String(isDark));
+    toggle.textContent = isDark ? "Light mode" : "Dark mode";
+  };
+
+  const savedTheme = localStorage.getItem(storageKey);
+  applyTheme(savedTheme || (prefersDark() ? "dark" : "light"));
+
+  toggle.addEventListener("click", () => {
+    const nextTheme =
+      document.body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    localStorage.setItem(storageKey, nextTheme);
+    applyTheme(nextTheme);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const particlesToggle = document.querySelector(".particles-toggle");
+  if (!particlesToggle) {
+    return;
+  }
+
+  const applyParticlesState = (isPaused) => {
+    particlesToggle.setAttribute("aria-pressed", String(isPaused));
+    particlesToggle.textContent = isPaused
+      ? "Play animation"
+      : "Pause animation";
+  };
+
+  applyParticlesState(false);
+
+  particlesToggle.addEventListener("click", () => {
+    if (!particlesInstance) {
+      return;
+    }
+
+    const isPaused = particlesToggle.getAttribute("aria-pressed") === "true";
+
+    if (isPaused) {
+      particlesInstance.resumeAnimation();
+      applyParticlesState(false);
+    } else {
+      particlesInstance.pauseAnimation();
+      applyParticlesState(true);
+    }
+  });
+});
 
 // // Get the input field
 // let enter = document.getElementByClassName("submit-button");
