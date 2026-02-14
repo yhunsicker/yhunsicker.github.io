@@ -218,7 +218,7 @@ body:has(.skip-main:focus) .homenav {
   padding-left: 0;
   margin: 0;
   display: flex;
-  gap: 12px;
+  gap: 4px;
   align-items: center;
   flex: 0 0 auto;
 }
@@ -460,7 +460,7 @@ h3 {
 .header-hero {
   display: flex;
   align-items: center;
-  min-height: calc(60vh - 134px);
+  height: 420px;
   width: 80%;
   margin-top: var(--spacing-12);
   margin-bottom: var(--spacing-15);
