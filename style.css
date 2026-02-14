@@ -266,6 +266,11 @@ body:has(.skip-main:focus) .homenav {
   color: var(--color-burgundy-500);
 }
 
+body[data-theme="dark"] .homenav .nav-brand:hover [lang="zh"],
+body[data-theme="dark"] .homenav .nav-brand:focus-visible [lang="zh"] {
+  color: var(--color-evergreen-400);
+}
+
 .homenav .nav_link:hover {
   color: var(--color-burgundy-500);
 }
@@ -920,6 +925,10 @@ h3 {
 
 .footer-bottom .back-to-top:hover {
   color: var(--color-primary);
+}
+
+body[data-theme="dark"] .footer-bottom .back-to-top:hover {
+  color: var(--color-evergreen-400);
 }
 
 @media screen and (max-width: 768px) {
