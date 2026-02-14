@@ -112,7 +112,7 @@ body {
 
 *:focus-visible {
   outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
+  outline-offset: 1px;
   border-radius: 4px;
 }
 
@@ -168,7 +168,7 @@ a:hover {
 .skip-main:focus {
   top: 12px;
   left: 12px;
-  padding: 4px 12px;
+  padding: 4px 4px;
 }
 
 .skip-main:focus + .header .homenav,
@@ -218,7 +218,7 @@ body:has(.skip-main:focus) .homenav {
   padding-left: 0;
   margin: 0;
   display: flex;
-  gap: 4px;
+  gap: 10px;
   align-items: center;
   flex: 0 0 auto;
 }
@@ -277,7 +277,7 @@ body[data-theme="dark"] .homenav .nav_link:hover {
 .homenav .nav_link {
   display: inline-flex;
   align-items: center;
-  padding: 0px 12px;
+  padding: 4px 4px;
   border-radius: 12px;
 }
 
@@ -782,42 +782,24 @@ h3 {
   background: var(--color-cream-50);
   box-sizing: border-box;
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .speaking-card:hover,
 .speaking-card:focus-within {
   box-shadow: 0 8px 18px rgba(58, 53, 48, 0.18);
-  animation: speaking-card-wiggle 1s ease-in-out;
-}
-
-@keyframes speaking-card-wiggle {
-  0% {
-    transform: rotate(0deg) translateY(0);
-  }
-  25% {
-    transform: rotate(-0.6deg) translateY(-1px);
-  }
-  50% {
-    transform: rotate(0.6deg) translateY(-1px);
-  }
-  75% {
-    transform: rotate(-0.4deg) translateY(0);
-  }
-  100% {
-    transform: rotate(0deg) translateY(0);
-  }
+  transform: rotate(-0.6deg);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .speaking-card {
-    transition: box-shadow 0.2s ease;
+    transition: box-shadow 0.3s ease;
   }
 
   .speaking-card:hover,
   .speaking-card:focus-within {
-    animation: none;
+    transform: none;
   }
 }
 
@@ -889,7 +871,7 @@ h3 {
   max-width: 1200px;
   border-bottom: 1px solid var(--color-evergreen-400);
   height: 0;
-  margin: var(--spacing-6) auto var(--spacing-6);
+  margin: var(--spacing-4) auto var(--spacing-4);
   box-sizing: border-box;
   transform: scaleX(1);
   transform-origin: center;
@@ -898,8 +880,8 @@ h3 {
     border-color 0.5s ease-out;
 }
 
-.footer:hover .footer-divider,
-.footer:focus-within .footer-divider {
+.footer-divider-wrap:hover .footer-divider,
+.footer-divider-wrap:focus-within .footer-divider {
   border-color: var(--color-burgundy-500);
 }
 
@@ -915,10 +897,29 @@ h3 {
   border: 0;
 }
 
+.footer-bottom .back-to-top {
+  max-width: none;
+  width: auto;
+  margin-bottom: 0;
+  padding: 0 0;
+  flex: 0 0 auto;
+}
+
 .footer-bottom {
-  max-width: 1200px;
-  width: 100%;
-  margin-bottom: var(--spacing-10);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+}
+
+.footer-bottom .back-to-top:focus,
+.footer-bottom .back-to-top:focus-visible {
+  padding: 4px 4px;
+}
+
+.footer-bottom .back-to-top:hover {
+  color: var(--color-primary);
 }
 
 @media screen and (max-width: 768px) {

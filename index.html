@@ -42,7 +42,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
-  <body>
+  <body id="top">
     <a class="skip-main" href="#main">Skip to main content</a>
     <header class="header">
       <nav class="homenav container">
@@ -201,7 +201,7 @@
               <p class="speaking-meta">FormFest 2025</p>
             </li>
 
-            <li class="speaking-card">
+            <!-- <li class="speaking-card">
               <span class="speaking-tag talk" aria-label="Category: talk"
                 >talk</span
               >
@@ -210,7 +210,7 @@
                 Accessible
               </h3>
               <p class="speaking-meta">Code for America 2026</p>
-            </li>
+            </li> -->
           </ul>
         </section>
       </div>
@@ -221,9 +221,12 @@
       <h2 class="sr-only" style="scroll-margin-top: 50px">Footer</h2>
 
       <div class="container">
-        <div class="footer-divider" aria-hidden="true"></div>
+        <span class="footer-divider-wrap" aria-hidden="true">
+          <div class="footer-divider"></div>
+        </span>
 
         <div class="footer-bottom">
+          <a href="#top" class="back-to-top">Back to top</a>
           <p class="p-footer">
             Painstakingly built with
             <svg class="heart-icon" viewBox="0 0 32 29.6">
