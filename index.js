@@ -123,9 +123,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //   const applyParticlesState = (isPaused) => {
 //     particlesToggle.setAttribute("aria-pressed", String(isPaused));
-//     particlesToggle.textContent = isPaused
-//       ? "Play animation"
-//       : "Pause animation";
+//     particlesToggle.textContent = isPaused ? "Play" : "Pause";
+//     particlesToggle.setAttribute(
+//       "aria-label",
+//       isPaused ? "Play animation" : "Pause animation",
+//     );
 //   };
 
 //   applyParticlesState(false);

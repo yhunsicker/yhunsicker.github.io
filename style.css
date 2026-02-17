@@ -75,7 +75,11 @@ body[data-theme="dark"] {
   --color-cream-50: var(--color-charcoal-900);
   --color-evergreen-400: #94a88f;
   --color-link: #f4efe7;
-  --color-link-hover: #ffd7d8;
+  --color-link-hover: #6e8a6c;
+}
+
+body[data-theme="dark"] a:hover {
+  color: var(--color-evergreen-400);
 }
 
 body[data-theme="light"] {
@@ -99,6 +103,7 @@ body[data-theme="light"] {
 body {
   color: var(--color-text);
   background-color: var(--color-bg);
+  font-size: var(--font-size-base);
   line-height: 1.5;
   transition:
     background-color 0.3s ease,
@@ -136,13 +141,13 @@ a:hover {
   text-decoration: none;
 }
 
-.background {
+/* .background {
   position: absolute;
   display: block;
   top: 0;
   left: 0;
   z-index: -999;
-}
+} */
 
 /* ============================================
    SKIP TO MAIN
@@ -162,7 +167,7 @@ a:hover {
 }
 
 .skip-main:hover {
-  color: var(--color-burgundy-500);
+  color: var(--color-burgundy-700);
 }
 
 .skip-main:focus {
@@ -201,7 +206,7 @@ body:has(.skip-main:focus) .homenav {
 
 .divider {
   flex-grow: 1;
-  height: var(--spacing-0-5);
+  height: 1.5px;
   align-self: center;
   background-color: var(--color-evergreen-400);
   margin: var(--spacing-2) var(--spacing-1);
@@ -263,7 +268,7 @@ body:has(.skip-main:focus) .homenav {
 
 .homenav .nav-brand:hover [lang="zh"],
 .homenav .nav-brand:focus-visible [lang="zh"] {
-  color: var(--color-burgundy-500);
+  color: var(--color-burgundy-700);
 }
 
 body[data-theme="dark"] .homenav .nav-brand:hover [lang="zh"],
@@ -272,7 +277,7 @@ body[data-theme="dark"] .homenav .nav-brand:focus-visible [lang="zh"] {
 }
 
 .homenav .nav_link:hover {
-  color: var(--color-burgundy-500);
+  color: var(--color-burgundy-700);
 }
 
 body[data-theme="dark"] .homenav .nav_link:hover {
@@ -301,11 +306,11 @@ body[data-theme="dark"] .homenav .nav_link:hover {
 }
 
 .theme-toggle:hover {
-  border-color: var(--color-burgundy-500);
+  border-color: var(--color-burgundy-700);
 }
 
 .theme-toggle:hover {
-  background-color: var(--color-burgundy-500);
+  background-color: var(--color-burgundy-700);
   color: var(--color-cream-50);
 }
 
@@ -321,6 +326,63 @@ body[data-theme="dark"] .theme-toggle:hover {
   outline-offset: var(--spacing-1);
   border-radius: var(--spacing-3);
 }
+
+/* .particles-toggle {
+  padding: var(--spacing-1) var(--spacing-3);
+  border: var(--spacing-0-5) solid transparent;
+  border-radius: var(--spacing-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  font-weight: 300;
+  line-height: normal;
+  color: var(--color-cream-50);
+  background-color: var(--color-burgundy-500);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.particles-toggle::before {
+  content: "❙ ❙";
+  font-size: var(--font-size-sm);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.particles-toggle:hover {
+  background-color: var(--color-burgundy-700);
+}
+
+body[data-theme="dark"] .particles-toggle:hover {
+  background-color: var(--color-evergreen-400);
+  color: var(--color-charcoal-900);
+}
+
+.particles-toggle[aria-pressed="true"] {
+  background-color: var(--color-evergreen-400);
+}
+
+.particles-toggle[aria-pressed="true"]::before {
+  content: "▶";
+}
+
+body[data-theme="dark"] .particles-toggle {
+  color: var(--color-text);
+  background-color: var(--color-burgundy-500);
+}
+
+body[data-theme="dark"] .particles-toggle[aria-pressed="true"] {
+  background-color: var(--color-evergreen-400);
+}
+
+.particles-toggle:focus-visible {
+  outline: var(--spacing-0-5) solid var(--color-primary);
+  outline-offset: var(--spacing-1);
+} */
 
 /* Responsive navigation: */
 @media screen and (max-width: 768px) {
@@ -823,6 +885,10 @@ h3 {
   background-color: var(--color-primary);
 }
 
+body[data-theme="dark"] .speaking-tag.blog {
+  color: var(--color-text);
+}
+
 .speaking-tag.talk {
   background-color: var(--color-secondary);
 }
@@ -874,7 +940,7 @@ h3 {
   width: 100%;
   padding: 0;
   max-width: 1200px;
-  border-bottom: 1px solid var(--color-evergreen-400);
+  border-bottom: 1.5px solid var(--color-evergreen-400);
   height: 0;
   margin: var(--spacing-4) auto var(--spacing-4);
   box-sizing: border-box;
@@ -930,7 +996,7 @@ h3 {
 }
 
 .footer-bottom .back-to-top:hover {
-  color: var(--color-primary);
+  color: var(--color-burgundy-700);
 }
 
 body[data-theme="dark"] .footer-bottom .back-to-top:hover {
