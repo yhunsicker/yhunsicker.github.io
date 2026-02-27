@@ -206,7 +206,7 @@ body:has(.skip-main:focus) .homenav {
 
 .divider {
   flex-grow: 1;
-  height: 1.5px;
+  height: 1px;
   align-self: center;
   background-color: var(--color-evergreen-400);
   margin: var(--spacing-2) var(--spacing-1);
