@@ -517,6 +517,19 @@ h2 {
   font-weight: 850;
   margin: var(--spacing-12) 0 var(--spacing-6);
   max-width: 100%;
+  position: relative;
+  padding-bottom: var(--spacing-5);
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: var(--spacing-12);
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
 }
 
 h3 {
@@ -909,6 +922,23 @@ body[data-theme="dark"] .speaking-tag.blog {
   background-color: var(--color-secondary);
 }
 
+/* Subtle tint per card type */
+.speaking-card:has(.speaking-tag.blog) {
+  background-color: rgba(180, 45, 47, 0.04);
+}
+
+body[data-theme="dark"] .speaking-card:has(.speaking-tag.blog) {
+  background-color: rgba(180, 45, 47, 0.1);
+}
+
+.speaking-card:has(.speaking-tag.talk) {
+  background-color: rgba(110, 138, 108, 0.06);
+}
+
+body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
+  background-color: rgba(110, 138, 108, 0.12);
+}
+
 .speaking-card h3 {
   font-size: var(--font-size-lg);
   margin: 0 0 var(--spacing-2) 0;
@@ -1052,6 +1082,31 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
 .heart-icon:hover {
   fill: var(--color-secondary);
 }
+/* ============================================
+   SCROLL FADE-IN
+   ============================================ */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(var(--spacing-5));
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ============================================
    UTILITY CLASSES
    ============================================ */

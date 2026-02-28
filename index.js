@@ -163,6 +163,34 @@ document.addEventListener("DOMContentLoaded", () => {
 //   }
 // });
 
+// Scroll fade-in animation
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+  );
+
+  document.querySelectorAll(".project-card").forEach((el) => {
+    el.classList.add("fade-in-up");
+    observer.observe(el);
+  });
+
+  document.querySelectorAll(".speaking-card").forEach((el, i) => {
+    el.classList.add("fade-in-up");
+    el.style.transitionDelay = `${i * 0.07}s`;
+    observer.observe(el);
+  });
+});
+
 // Toggle project image on tap/click for touch devices
 document.addEventListener("DOMContentLoaded", () => {
   const wrappers = document.querySelectorAll(".project-thumbnail-wrapper");
@@ -183,4 +211,21 @@ document.addEventListener("DOMContentLoaded", () => {
       card.classList.toggle("is-toggled");
     });
   });
+
+  // Scroll fade-in
+  const fadeEls = document.querySelectorAll(".fade-in");
+  if (fadeEls.length && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 },
+    );
+    fadeEls.forEach((el) => observer.observe(el));
+  }
 });
