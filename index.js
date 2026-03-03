@@ -212,8 +212,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Scroll fade-in
-  const fadeEls = document.querySelectorAll(".fade-in");
+  // Scroll fade-in (.fade-in and .reveal)
+  const fadeEls = document.querySelectorAll(".fade-in, .reveal");
   if (fadeEls.length && "IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) => {
