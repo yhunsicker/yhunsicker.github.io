@@ -152,11 +152,11 @@ a:hover {
 .skip-main {
   position: absolute;
   top: -100px;
-  left: var(--spacing-3);
+  left: var(--spacing-15);
   z-index: 1000;
   background-color: var(--color-bg);
   color: var(--color-text);
-  padding: var(--spacing-1) var(--spacing-3);
+  padding: var(--spacing-5) var(--spacing-3);
   text-decoration: underline;
   font-size: var(--font-size-medium);
   transition: top 0.2s ease;
@@ -168,7 +168,7 @@ a:hover {
 
 .skip-main:focus {
   top: var(--spacing-3);
-  left: var(--spacing-3);
+  left: var(--spacing-15);
   padding: var(--spacing-1) var(--spacing-1);
 }
 
@@ -284,7 +284,6 @@ body[data-theme="dark"] .homenav .nav_link:hover {
   display: inline-flex;
   align-items: center;
   padding: var(--spacing-1) var(--spacing-1);
-  border-radius: var(--spacing-3);
 }
 
 .theme-toggle {
@@ -953,15 +952,14 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
 }
 
 .thinking-link {
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  color: var(--color-primary);
-  text-decoration: none;
+  font-size: var(--font-size-medium);
+  color: var(--color-text);
+  text-underline-offset: var(--spacing-1);
   margin-top: auto;
 }
 
 .thinking-link:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .thinking-follow {
