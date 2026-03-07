@@ -36,6 +36,7 @@
   <body id="top">
     <!-- Skip to main content link for screen readers -->
     <a class="skip-main" href="#main">Skip to main content</a>
+
     <header class="header">
       <nav class="homenav container">
         <a href="./index.html" class="nav-brand" aria-label="Yu-Li Home">
@@ -47,15 +48,10 @@
           <span class="divider"></span>
         </span>
 
-        <ul>
-          <li>
-            <a
-              class="nav_link"
-              href="https://www.linkedin.com/..."
-              aria-describedby="opensInNewTab"
-              >LinkedIn</a
-            >
-          </li>
+        <ul role="list">
+          <li><a class="nav_link" href="#work">Work</a></li>
+          <li><a class="nav_link" href="#services">Services</a></li>
+          <li><a class="nav_link" href="#sharing">Sharing</a></li>
         </ul>
       </nav>
     </header>
@@ -73,7 +69,11 @@
         </div>
 
         <!-- Portfolio content -->
-        <section class="container-work" aria-labelledby="work-heading">
+        <section
+          id="work"
+          class="container-work"
+          aria-labelledby="work-heading"
+        >
           <div class="header-work">
             <p class="section-label">Selected Work</p>
             <h2 id="work-heading">Problems actually solved</h2>
@@ -99,7 +99,9 @@
                   The Commonwealth of Massachusetts | Mass Digital Services
                   (MDS)
                 </p>
-                <h3>MyMassGov Website</h3>
+                <h3>
+                  MyMassGov -- UX Accessibility at Scale for State Government
+                </h3>
                 <p class="project-description">
                   One login. 25,000+ Massachusetts residents. Every state
                   service they depend on. When Mass Digital Services built a
@@ -143,7 +145,7 @@
               </div>
               <div class="project-card-content">
                 <p class="project-title">fiveBelow</p>
-                <h3>Shopping Cart Redesign</h3>
+                <h3>Responsive Shopping Cart Redesign</h3>
                 <p class="project-description">
                   Users weren't completing their purchases. The drop-off wasn't
                   a payment problem or a price problem — it was a user
@@ -159,7 +161,7 @@
                 <p class="project-title">
                   The Department of Family and Medical Leave (DFML)
                 </p>
-                <h3>Paid Family and Medical Leave</h3>
+                <h3>Paid Family and Medical Leave (PFML) Portal</h3>
                 <p class="project-description">
                   People filing for paid leave aren't are often navigating a
                   crisis. I designed WCAG 2.1 AA-compliant features for
@@ -187,13 +189,17 @@
         </section>
 
         <!-- SERVICES -->
-        <section class="services" aria-labelledby="services-heading">
-          <div class="section-header reveal">
+        <section
+          id="services"
+          class="services"
+          aria-labelledby="services-heading"
+        >
+          <div class="section-header">
             <span class="section-label" aria-hidden="true">What I do</span>
             <h2 id="services-heading" class="section-title">My services</h2>
           </div>
 
-          <ul class="services-grid reveal" role="list">
+          <ul class="services-grid" role="list">
             <li class="service-card">
               <article>
                 <span class="service-num" aria-hidden="true">01</span>
@@ -316,11 +322,12 @@
 
         <!-- /Speaking and writing/ -->
         <section
+          id="sharing"
           class="container-speaking-writing"
           aria-labelledby="speaking-writing-heading"
         >
           <div class="speaking-writing">
-            <p class="section-label">Speaking & Writing</p>
+            <p class="section-label">Sharing</p>
             <h2 id="speaking-writing-heading">Knowledge is better shared</h2>
             <p>
               Knowledge, like boba, is better when shared — so pull up a straw!
@@ -361,7 +368,7 @@
                 target="_blank"
                 rel="noopener"
                 class="thinking-link"
-                >Read on Medium</a
+                >Read on Medium ></a
               >
             </article>
 
@@ -385,7 +392,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
       <h2 class="sr-only">Footer</h2>
 
       <div class="container">
@@ -394,7 +401,6 @@
         </span>
 
         <div class="footer-bottom">
-          <a href="#top" class="back-to-top">Back to top</a>
           <p class="p-footer">
             Painstakingly built with
             <svg class="heart-icon" viewBox="0 0 32 29.6">
@@ -404,12 +410,23 @@
             </svg>
             (and too much tea) by yours truly | 2026
           </p>
+          <div class="footer-links">
+            <a
+              class="nav_link"
+              href="https://www.linkedin.com/in/yhunsicker/"
+              target="_blank"
+              rel="noopener"
+              aria-describedby="opensInNewTab"
+              >LinkedIn</a
+            >
+            <a href="#top" class="back-to-top">Back to top</a>
+          </div>
         </div>
       </div>
     </footer>
     <!-- Visually hidden text for screen readers -->
     <span id="opensInNewTab" class="visually-hidden">(opens in a new tab)</span>
 
-    <script src="./index.js"></script>
+    <!-- <script src="./index.js"></script> -->
   </body>
 </html>

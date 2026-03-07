@@ -196,6 +196,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const wrappers = document.querySelectorAll(".project-thumbnail-wrapper");
   const isSmallScreen = () => window.matchMedia("(max-width: 780px)").matches;
 
+  // Create an aria-live region for image swap announcements
+  const liveRegion = document.createElement("div");
+  liveRegion.setAttribute("aria-live", "polite");
+  liveRegion.setAttribute("aria-atomic", "true");
+  liveRegion.classList.add("sr-only");
+  document.body.appendChild(liveRegion);
+
   wrappers.forEach((wrapper) => {
     wrapper.addEventListener("click", (event) => {
       if (!isSmallScreen()) {
@@ -208,7 +215,31 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       event.preventDefault();
-      card.classList.toggle("is-toggled");
+      const isToggled = card.classList.toggle("is-toggled");
+
+      // Announce the change to screen readers
+      const primaryAlt =
+        wrapper
+          .querySelector(".project-thumbnail-primary")
+          ?.getAttribute("alt") || "Primary image";
+      const secondaryAlt =
+        wrapper
+          .querySelector(".project-thumbnail-secondary")
+          ?.getAttribute("alt") || "Secondary image";
+
+      liveRegion.textContent = isToggled
+        ? `Showing: ${secondaryAlt}`
+        : `Showing: ${primaryAlt}`;
+    });
+  });
+
+  // Handle programmatic focus for "Back to top" links
+  document.querySelectorAll('a[href="#top"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      // Focus the first focusable element or body
+      const firstFocusable =
+        document.querySelector(".skip-main") || document.body;
+      firstFocusable.focus();
     });
   });
 
