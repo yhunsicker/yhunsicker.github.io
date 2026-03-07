@@ -3,7 +3,7 @@
   --color-burgundy-500: #b42d2f;
   --color-burgundy-700: #872021;
   --color-evergreen-300: #97b195;
-  --color-evergreen-400: #6e8a6c;
+  --color-evergreen-400: #4b7449;
   --color-charcoal-900: #3a3530;
   --color-cream-50: #fcf9f4;
 
@@ -532,7 +532,7 @@ p {
 .project-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-12);
+  gap: var(--spacing-5);
   width: 100%;
   margin: var(--spacing-9) 0 0;
   padding-left: 0;
@@ -960,6 +960,7 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
 
 .thinking-link:hover {
   text-decoration: none;
+  color: var(--color-primary);
 }
 
 .thinking-follow {
