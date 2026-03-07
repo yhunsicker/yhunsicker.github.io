@@ -352,6 +352,10 @@ body[data-theme="dark"] .theme-toggle:hover {
 }
 
 @media screen and (max-width: 480px) {
+  body {
+    font-size: 1rem; /* 16px */
+  }
+
   .header {
     padding: 0;
   }
@@ -384,7 +388,7 @@ body[data-theme="dark"] .theme-toggle:hover {
   .homenav ul li a {
     padding: var(--spacing-2) var(--spacing-1-5);
     min-height: 44px;
-    font-size: 0.875rem;
+    font-size: 1rem; /* 16px */
     white-space: nowrap;
   }
 
@@ -398,7 +402,7 @@ body[data-theme="dark"] .theme-toggle:hover {
 @media screen and (max-width: 360px) {
   .homenav ul li a {
     padding: var(--spacing-2) var(--spacing-1);
-    font-size: 0.8rem;
+    font-size: 1rem; /* 16px */
   }
 
   .homenav .nav-divider {
@@ -779,7 +783,7 @@ p {
 
   .project-title,
   .project-description {
-    font-size: var(--font-size-medium);
+    font-size: 1rem; /* 16px */
   }
 
   .project-thumbnail-wrapper {
