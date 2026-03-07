@@ -28,9 +28,9 @@
   --font-family-sans: "DM Sans", sans-serif;
 
   /* Typography Scale */
-  --font-size-xs: 0.875rem; /* 14px */
-  --font-size-medium: 1rem; /* 16px */
-  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xs: 1rem; /* 16px */
+  --font-size-medium: 1.125rem; /* 18px */
+  --font-size-lg: 1.25rem; /* 20px */
 
   /* Heading Scale */
   --font-size-xl: clamp(1.25rem, 1.2vw + 1.1rem, 1.5rem); /* 20px → 24px */
@@ -147,7 +147,9 @@ a {
     text-decoration 0.2s ease;
 }
 
-a:hover {
+a:hover,
+a:focus,
+a:active {
   text-decoration: underline;
   text-decoration-color: var(--color-primary);
 }
@@ -783,12 +785,13 @@ p {
   }
 
   .project-card h3 {
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-lg);
+    margin: 0 0 var(--spacing-2) 0;
   }
 
   .project-title,
   .project-description {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-medium);
   }
 
   .project-thumbnail-wrapper {
