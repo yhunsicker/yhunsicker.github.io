@@ -76,6 +76,12 @@
 //   exit.addEventListener("click", closeModal);
 // }
 
+// Force scroll to top on refresh
+if (history.scrollRestoration) {
+  history.scrollRestoration = "manual";
+}
+window.scrollTo(0, 0);
+
 //darkmode theme script//
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".theme-toggle");

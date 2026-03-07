@@ -1129,12 +1129,14 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
   align-items: center;
   gap: var(--spacing-4);
   margin-bottom: var(--spacing-8);
+  width: 100%;
 }
 
 @media screen and (max-width: 480px) {
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
+    padding: 0;
     gap: var(--spacing-4);
   }
 
@@ -1177,7 +1179,7 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
   text-decoration-color: var(--color-primary);
 }
 
-@media screen and (max-width: 768px) {
+@med/* removed padding that was causing misalignment */
   .footer-bottom {
     padding: var(--spacing-4-5) var(--spacing-3);
     flex-direction: column;
