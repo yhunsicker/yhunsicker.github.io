@@ -1202,6 +1202,10 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
   padding: 0;
 }
 
+.footer-links a {
+  font-size: var(--font-size-medium);
+}
+
 .footer-links li {
   list-style: none;
 }
