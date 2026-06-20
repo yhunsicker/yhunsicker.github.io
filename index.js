@@ -82,6 +82,16 @@ if (history.scrollRestoration) {
 }
 window.scrollTo(0, 0);
 
+// Sticky nav: transparent at top, solid once scrolled
+(function () {
+  const header = document.querySelector(".header");
+  if (!header) return;
+  const update = () =>
+    header.classList.toggle("is-scrolled", window.scrollY > 10);
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+})();
+
 //darkmode theme script//
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".theme-toggle");

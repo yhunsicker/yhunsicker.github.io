@@ -56,47 +56,47 @@
       </nav>
     </header>
 
-    <!-- Main content - Intro -->
+    <!-- Main content -->
     <main id="main" tabindex="-1">
-      <!-- Intro header -->
-      <div class="container">
-        <div class="header-hero">
-          <h1>
-            Yu-Li designs
-            <span class="emphasize-word-1">accessible</span> digital experiences
-            that <span class="emphasize-word-2">empower</span> every user,
-            wherever the work takes her.
-            <!-- Yu-Li partners with teams to design
-            <span class="emphasize-word-1">accessible</span> digital experiences
-            that <span class="emphasize-word-2">empower</span> every user. -->
-          </h1>
+      <!-- Hero -->
+      <div class="section-hero">
+        <div class="container">
+          <div class="header-hero">
+            <h1>
+              Yu-Li designs
+              <span class="emphasize-word-1">accessible</span> digital
+              experiences that
+              <span class="emphasize-word-2">empower</span> every user, wherever
+              the work takes her.
+            </h1>
+          </div>
         </div>
+      </div>
 
-        <!-- Portfolio content -->
-        <section
-          id="work"
-          class="container-work"
-          aria-labelledby="work-heading"
-        >
+      <!-- Portfolio content -->
+      <section
+        id="work"
+        class="section-band section-band--alt"
+        aria-labelledby="work-heading"
+      >
+        <div class="container">
           <div class="header-work">
             <p class="section-label">Selected Work</p>
-            <h2 id="work-heading">Problems actually solved</h2>
+            <h2 id="work-heading" data-num="01">Problems actually solved</h2>
             <p>
               AI helped write the code, but I personally audited every line
               against accessibility standards. It was built with love, stolen
               pockets of time, and more revisions than I would like to admit
               (that stays between me and my code).
             </p>
-
-            <p>
-              Since most of my recent work is under NDA, I don't post public
-              case studies—but I am happy to walk you through them privately.
-              Reach out to chat about the work I have done, or just to say 'hi'.
-              👋.
+            <p class="nda-note">
+              Most client work is under NDA. Select case studies are shown below
+              — reach out to see the full portfolio.
             </p>
           </div>
 
           <ul class="project-list" role="list">
+            <!-- Featured case study — editorial treatment -->
             <li class="project-card">
               <div class="project-card-image">
                 <div class="project-thumbnail-wrapper">
@@ -117,14 +117,15 @@
                 <h3>Responsive Shopping Cart Redesign</h3>
                 <p class="project-description">
                   Users weren't completing their purchases. The drop-off wasn't
-                  a payment problem or a price problem — it was a user
-                  experience problem. We dug into the "why", conducting research
-                  that uncovered where trust broke down and shaped the redesign
-                  that fixed it.
+                  a payment problem or a price problem. It was a user experience
+                  problem. We dug into the "why", conducting research that
+                  uncovered where trust broke down and shaped the redesign that
+                  fixed it.
                 </p>
               </div>
             </li>
 
+            <!-- Standard case studies -->
             <li class="project-card">
               <div class="project-card-content">
                 <p class="project-title">
@@ -135,13 +136,12 @@
                   MyMassGov -- UX Accessibility at Scale for State Government
                 </h3>
                 <p class="project-description">
-                  One login. 25,000+ Massachusetts residents. Every state
-                  service they depend on. When Mass Digital Services built a
-                  single sign-on platform to connect residents to government
-                  services regardless of ability, device, or assistive
-                  technology. I worked alongside a cross-functional team to make
-                  sure accessibility barriers were identified and resolved
-                  before launch, not after.
+                  25,000+ Massachusetts residents need to prove who they are to
+                  access state services. My team built the identity verification
+                  experience for MyMassGov. I led accessibility across design
+                  and engineering, making sure every constituent could complete
+                  verification regardless of ability, device, or assistive
+                  technology
                 </p>
               </div>
               <div class="project-card-image">
@@ -183,24 +183,31 @@
                 <p class="project-description">
                   People filing for paid leave aren't are often navigating a
                   crisis. I designed WCAG 2.1 AA-compliant features for
-                  Massachusetts' Paid Family & Medical Leave program, turning
-                  dense requirements into a seamless experiences. Since launch,
-                  the program has paid out $1 billion in benefits.
+                  Massachusetts' Paid Family &amp; Medical Leave program,
+                  turning dense requirements into a seamless experiences.
+                </p>
+                <p class="stat-callout">
+                  Since launch, the program has paid out
+                  <strong class="stat-number">$1 billion</strong> in benefits.
                 </p>
               </div>
             </li>
           </ul>
-        </section>
+        </div>
+      </section>
 
-        <!-- /Speaking and writing/ -->
-        <section
-          id="sharing"
-          class="container-speaking-writing"
-          aria-labelledby="speaking-writing-heading"
-        >
+      <!-- Sharing — dark contrast band -->
+      <section
+        id="sharing"
+        class="section-band section-band--dark"
+        aria-labelledby="speaking-writing-heading"
+      >
+        <div class="container">
           <div class="speaking-writing">
             <p class="section-label">Sharing</p>
-            <h2 id="speaking-writing-heading">Knowledge is better shared</h2>
+            <h2 id="speaking-writing-heading" data-num="02">
+              Knowledge is better shared
+            </h2>
             <p>
               No gatekeeping here, just good ideas steeping. This is a
               collection of talks and writing I've done on accessibility and
@@ -209,30 +216,18 @@
             </p>
           </div>
           <div class="thinking-grid">
-            <!-- Talk 1 -->
             <article class="thinking-card">
               <span class="thinking-type type-talk"> Talk </span>
               <h3 class="thinking-title">Introduction to Accessibility</h3>
               <p class="thinking-venue">NERD Summit · 2023</p>
-              <!-- <p class="thinking-desc">
-                A foundational talk on what accessibility really means in
-                practice — and why it matters beyond compliance. Made for teams
-                starting their a11y journey.
-              </p> -->
-              <!-- <a href="#contact" class="thinking-link">Request slides →</a> -->
             </article>
 
-            <!-- Blog 1 -->
             <article class="thinking-card">
               <span class="thinking-type type-blog"> Blog </span>
               <h3 class="thinking-title">
                 Improving Accessibility through Empathy-Driven Design
               </h3>
               <p class="thinking-venue">Medium · 2025</p>
-              <!-- <p class="thinking-desc">
-                Why empathy isn't just a soft skill — it's the lens that makes
-                accessible design decisions intuitive rather than rule-based.
-              </p> -->
               <a
                 href="https://medium.com/the-last-call/improving-accessibility-through-empathy-driven-design-231e1b15f0dc"
                 aria-describedby="opensInNewTab"
@@ -243,56 +238,32 @@
               >
             </article>
 
-            <!-- Talk 2 -->
             <article class="thinking-card">
               <span class="thinking-type type-talk"> Talk </span>
               <h3 class="thinking-title">
                 Beyond the Basics: Accessible Form Validation That Works
               </h3>
               <p class="thinking-venue">FormFest · 2025</p>
-              <!-- <p class="thinking-desc">
-                Forms are where accessibility breaks most often. This talk goes
-                deep on error handling, live regions, and the patterns that
-                actually help users succeed.
-              </p> -->
-              <!-- <a href="#contact" class="thinking-link">Request slides →</a> -->
             </article>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- SERVICES -->
-        <section
-          id="services"
-          class="services"
-          aria-labelledby="services-heading"
-        >
+      <!-- Services -->
+      <section
+        id="services"
+        class="section-band section-band--alt services"
+        aria-labelledby="services-heading"
+      >
+        <div class="container">
           <div class="section-header">
             <span class="section-label" aria-hidden="true">What I do</span>
-            <h2 id="services-heading" class="section-title">My services</h2>
+            <h2 id="services-heading" class="section-title" data-num="03">
+              My services
+            </h2>
           </div>
 
           <ul class="services-grid" role="list">
-            <!-- <li class="service-card">
-              <article>
-                <span class="service-num" aria-hidden="true">01</span>
-                <h3>UX Strategy &amp; Research</h3>
-                <p class="service-desc">
-                  Clarity before pixels. I bridge the gap between user needs and
-                  business goals to define a direction worth building.
-                </p>
-                <ul
-                  class="service-tags"
-                  aria-label="Tags for UX Strategy & Research"
-                >
-                  <li class="service-tag">Discovery</li>
-                  <li class="service-tag">Journey Maps</li>
-                  <li class="service-tag">Usability Testing</li>
-                  <li class="service-tag">User Interviews</li>
-                  <li class="service-tag">Personas</li>
-                </ul>
-              </article>
-            </li> -->
-
             <li class="service-card">
               <article>
                 <span class="service-num" aria-hidden="true">02</span>
@@ -301,16 +272,6 @@
                   Accessibility isn't a checkbox. I audit, remediate, train, and
                   build systems so accessibility is baked in, not bolted on.
                 </p>
-                <ul
-                  class="service-tags"
-                  aria-label="Tags for Accessibility Consulting"
-                >
-                  <li class="service-tag">WCAG 2.1+</li>
-                  <li class="service-tag">Automated Audits</li>
-                  <li class="service-tag">Manual Audits</li>
-                  <li class="service-tag">Remediation</li>
-                  <li class="service-tag">A11y Training</li>
-                </ul>
               </article>
             </li>
 
@@ -322,53 +283,8 @@
                   From wireframe to high-fidelity. I build thoughtful, tested
                   interfaces that balance user needs with business requirements.
                 </p>
-                <ul class="service-tags" aria-label="Tags for Product Design">
-                  <li class="service-tag">Wireframes</li>
-                  <li class="service-tag">Prototypes</li>
-                  <li class="service-tag">Strategy</li>
-                  <li class="service-tag">Visual Design</li>
-                </ul>
               </article>
             </li>
-
-            <!-- <li class="service-card">
-              <article>
-                <span class="service-num" aria-hidden="true">04</span>
-                <h3>Design Systems</h3>
-                <p class="service-desc">
-                  Velocity through consistency. I design and document the
-                  systems that bridge the gap between design and engineering. I
-                  ensure your product stays coherent and accessible.
-                </p>
-                <ul class="service-tags" aria-label="Tags for Design Systems">
-                  <li class="service-tag">Figma</li>
-                  <li class="service-tag">Documentation</li>
-                  <li class="service-tag">Component Libraries</li>
-                  <li class="service-tag">AI Design System Integration</li>
-                </ul>
-              </article>
-            </li> -->
-
-            <!-- <li class="service-card">
-              <article>
-                <span class="service-num" aria-hidden="true">05</span>
-                <h3>Fractional UX & Accessibility Leadership</h3>
-                <p class="service-desc">
-                  Senior expertise without the full-time headcount. I embed with
-                  your team to lead design and accessibility strategy, ensuring
-                  every decision is inclusive and user-centered.
-                </p>
-                <ul
-                  class="service-tags"
-                  aria-label="Tags for Fractional UX & Accessibility Leadership"
-                >
-                  <li class="service-tag">Stakeholder Alignment</li>
-                  <li class="service-tag">Strategic Guidance</li>
-                  <li class="service-tag">Training</li>
-                  <li class="service-tag">Mentorship</li>
-                </ul>
-              </article>
-            </li> -->
 
             <li class="service-card">
               <article>
@@ -379,17 +295,11 @@
                   design and and build proofs-of-concept at speed without losing
                   the human-centered strategy at the core.
                 </p>
-                <ul class="service-tags" aria-label="Tags for AI Prototyping">
-                  <li class="service-tag">Proof of concept</li>
-                  <li class="service-tag">AI Assisted Dev</li>
-                  <li class="service-tag">Vibe Coding</li>
-                  <li class="service-tag">Exploration</li>
-                </ul>
               </article>
             </li>
           </ul>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->

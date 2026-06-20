@@ -18,7 +18,8 @@
   --color-secondary: var(--color-evergreen-400);
 
   --color-text: var(--color-charcoal-900);
-  --color-bg: var(--color-cream-50);
+  --color-bg: #f5f5f7;
+  --color-bg-alt: #eeeceb;
 
   /* Link Styles */
   --color-link: var(--color-primary);
@@ -82,8 +83,9 @@
 
 body[data-theme="dark"] {
   --color-text: #f4efe7;
-  --color-bg: #1f1b17;
-  --color-charcoal-900: #1f1b17;
+  --color-bg: #1a1a1c;
+  --color-bg-alt: #222224;
+  --color-charcoal-900: #1a1a1c;
   --color-cream-50: var(--color-charcoal-900);
   --color-evergreen-400: #94a88f;
   --color-link: #f4efe7;
@@ -96,7 +98,8 @@ body[data-theme="dark"] a:hover {
 
 body[data-theme="light"] {
   --color-text: var(--color-charcoal-900);
-  --color-bg: var(--color-cream-50);
+  --color-bg: #f5f5f7;
+  --color-bg-alt: #eeeceb;
   --color-link: var(--color-primary);
   --color-link-hover: var(--color-burgundy-700);
 }
@@ -115,7 +118,13 @@ body[data-theme="light"] {
 body {
   color: var(--color-text);
   background-color: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse at 12% 65vh, rgba(99, 56, 240, 0.09) 0%, transparent 52%),
+    radial-gradient(ellipse at 88% 25vh, rgba(255, 140, 50, 0.08) 0%, transparent 48%);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
   font-size: var(--font-size-medium);
+  font-weight: 350;
   line-height: 1.5;
   transition:
     background-color 0.3s ease,
@@ -192,9 +201,15 @@ body:has(.skip-main:focus) .homenav {
 .header {
   position: sticky;
   z-index: 100;
-  background-color: var(--color-bg);
+  background-color: transparent;
   width: 100%;
   display: block;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.header.is-scrolled {
+  background-color: var(--color-bg);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
 }
 
 .homenav {
@@ -458,7 +473,7 @@ h1 {
   color: var(--color-text);
   line-height: 1.2;
   font-weight: 850;
-  letter-spacing: 0.8px;
+  letter-spacing: -0.01em;
   margin: var(--spacing-12) 0 var(--spacing-6);
   max-width: 100%;
 }
@@ -467,6 +482,7 @@ h2 {
   font-size: var(--font-size-2xl);
   color: var(--color-text);
   font-weight: 850;
+  letter-spacing: -0.015em;
   margin: var(--spacing-12) 0 var(--spacing-6);
   max-width: 100%;
 }
@@ -582,7 +598,7 @@ p {
 .project-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-5);
+  gap: var(--spacing-10);
   width: 100%;
   margin: var(--spacing-9) 0 0;
   padding-left: 0;
@@ -604,7 +620,7 @@ p {
   border-radius: var(--spacing-4);
   border: 1.75px solid var(--color-evergreen-300);
   overflow: visible;
-  transition: border-color 0.6s ease;
+  transition: border-color 0.6s ease, transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 1;
 }
 
@@ -615,10 +631,12 @@ p {
   }
 }
 
-/* Hide the evergreen border on hover/focus */
+/* Hover: lift card + fade border so animated lines take over */
 .project-card:hover,
 .project-card:focus-within {
   border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(58, 53, 48, 0.12), 0 4px 12px rgba(58, 53, 48, 0.06);
 }
 
 .project-card::before {
@@ -702,16 +720,16 @@ p {
   height: 100%;
   z-index: 0;
   opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-  will-change: opacity;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease;
+  will-change: opacity, transform;
 }
 
 .project-thumbnail-primary {
   position: relative;
   height: auto;
   z-index: 1;
-  transition: opacity 0.6s ease-in-out;
-  will-change: opacity;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease;
+  will-change: opacity, transform;
 }
 
 .project-thumbnail-wrapper:hover .project-thumbnail-secondary,
@@ -1073,32 +1091,15 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(to bottom, var(--color-bg-alt) 0%, var(--color-bg) 100px);
 }
 
 .footer-divider {
-  width: 100%;
-  padding: 0;
-  max-width: 1200px;
-  border-bottom: 1.5px solid var(--color-evergreen-300);
-  height: 0;
-  margin: var(--spacing-4) auto var(--spacing-4);
-  box-sizing: border-box;
-  transform: scaleX(1);
-  transform-origin: center;
-  transition:
-    transform 0.5s ease-out,
-    border-color 0.5s ease-out;
+  display: none;
 }
 
 .footer-divider-wrap {
-  display: block;
-  width: 100%;
-  padding: var(--spacing-1) 0;
-}
-
-.footer-divider-wrap:hover .footer-divider,
-.footer-divider-wrap:focus-within .footer-divider {
-  border-color: var(--color-burgundy-500);
+  display: none;
 }
 
 .sr-only {
@@ -1180,14 +1181,6 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
   text-decoration-color: var(--color-primary);
 }
 
-@med/* removed padding that was causing misalignment */
-  .footer-bottom {
-    padding: var(--spacing-4-5) var(--spacing-3);
-    flex-direction: column;
-    gap: var(--spacing-1-5);
-    white-space: normal;
-  }
-}
 
 .p-footer {
   font-size: var(--font-size-medium);
@@ -1240,8 +1233,14 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
 }
 
 .section-label::before {
-  content: "—";
-  font-weight: 400;
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  vertical-align: middle;
+  border-radius: 1px;
+  flex-shrink: 0;
 }
 
 .section-label + h2 {
@@ -1320,6 +1319,12 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
   letter-spacing: 0.1em;
   color: var(--color-secondary);
   margin: 0 0 var(--spacing-2);
+  transition: color 0.25s ease;
+}
+
+.service-card:hover .service-num,
+.service-card:focus-within .service-num {
+  color: var(--color-primary);
 }
 
 .service-icon {
@@ -1421,4 +1426,280 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* ============================================
+   SECTION BANDS — visual rhythm as you scroll
+   ============================================ */
+
+.section-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+body[data-theme="dark"] .section-hero::after {
+  background:
+    radial-gradient(ellipse at 12% 65%, rgba(99, 56, 240, 0.14) 0%, transparent 52%),
+    radial-gradient(ellipse at 88% 20%, rgba(255, 140, 50, 0.1) 0%, transparent 48%);
+}
+
+.section-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.section-band {
+  background-color: var(--color-bg);
+  padding-top: var(--spacing-18);
+  padding-bottom: var(--spacing-20);
+}
+
+.section-band--alt {
+  background-color: var(--color-bg-alt);
+}
+
+body[data-theme="dark"] .section-band--alt {
+  background-color: var(--color-bg-alt);
+}
+
+/* Reset top margins that compensated for single-container layout */
+.section-band .header-work,
+.section-band .speaking-writing,
+.section-band .section-header {
+  margin-top: 0;
+}
+
+/* Section-band handles bottom spacing — remove redundant grid margin */
+.section-band .services-grid {
+  margin-bottom: 0;
+}
+
+
+/* ============================================
+   ACCENT COLOR — footer heart warmth on hover
+   ============================================ */
+
+.footer-bottom:hover .heart-icon {
+  fill: var(--color-primary);
+}
+
+/* ============================================
+   HERO — poster-scale headline
+   ============================================ */
+
+.header-hero {
+  height: auto;
+  min-height: 520px;
+  margin-top: var(--spacing-16);
+  margin-bottom: var(--spacing-20);
+}
+
+.header-hero h1 {
+  font-size: clamp(2.8rem, 7.5vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 850;
+  max-width: 14ch;
+}
+
+@media screen and (max-width: 480px) {
+  .header-hero {
+    min-height: 0;
+    margin-top: var(--spacing-10);
+    margin-bottom: var(--spacing-14);
+  }
+
+  .header-hero h1 {
+    font-size: clamp(2.2rem, 11vw, 3rem);
+    line-height: 1.1;
+  }
+}
+
+/* ============================================
+   FEATURED CARD — editorial / full-spread
+   ============================================ */
+
+.project-card--featured {
+  min-height: 460px;
+  padding: var(--spacing-14) var(--spacing-12);
+  gap: var(--spacing-14);
+  background: #ffffff;
+  box-shadow:
+    0 24px 80px rgba(58, 53, 48, 0.12),
+    0 4px 16px rgba(58, 53, 48, 0.06);
+}
+
+body[data-theme="dark"] .project-card--featured {
+  background: #2a2520;
+}
+
+.project-card--featured .project-card-image {
+  flex: 0 1 420px;
+  max-width: 420px;
+}
+
+.project-card--featured h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 850;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  padding-top: var(--spacing-3);
+  margin-top: 0;
+}
+
+.project-card--featured .project-description {
+  line-height: 1.7;
+  margin-top: var(--spacing-3);
+}
+
+
+/* Image zoom on hover */
+.project-card:hover .project-thumbnail-secondary,
+.project-card:focus-within .project-thumbnail-secondary {
+  transform: scale(1.04);
+}
+
+@media (max-width: 780px) {
+  .project-card--featured {
+    min-height: auto;
+    padding: var(--spacing-8) var(--spacing-6);
+    gap: var(--spacing-6);
+  }
+}
+
+/* ============================================
+   NDA DISCLAIMER — confident, not apologetic
+   ============================================ */
+
+.nda-note {
+  font-size: var(--font-size-medium);
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--spacing-4);
+}
+
+/* ============================================
+   STAT PULLQUOTE — PFML $1B moment
+   ============================================ */
+
+.stat-callout {
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+  font-size: var(--font-size-medium);
+  line-height: var(--line-height-md);
+  color: var(--color-text);
+}
+
+.stat-number {
+  display: inline;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+}
+
+/* ============================================
+   DARK SECTION BAND — Sharing / credibility
+   ============================================ */
+
+.section-band--dark {
+  background-color: #18150f;
+  color: #f0ebe0;
+}
+
+body[data-theme="dark"] .section-band--dark {
+  background-color: #0f0d0a;
+}
+
+.section-band--dark .section-label {
+  color: var(--color-evergreen-300);
+}
+
+.section-band--dark h2,
+.section-band--dark p {
+  color: #f0ebe0;
+}
+
+.section-band--dark .thinking-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.section-band--dark .thinking-card:hover {
+  background-color: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 var(--spacing-3) var(--spacing-8) rgba(0, 0, 0, 0.3);
+}
+
+.section-band--dark .thinking-title {
+  color: #f0ebe0;
+}
+
+.section-band--dark .thinking-venue {
+  color: rgba(240, 235, 224, 0.6);
+}
+
+.section-band--dark .type-talk {
+  color: var(--color-evergreen-300);
+}
+
+.section-band--dark .type-blog {
+  color: #e8a87c;
+}
+
+.section-band--dark .thinking-link {
+  color: rgba(240, 235, 224, 0.8);
+}
+
+.section-band--dark .thinking-link:hover {
+  color: var(--color-evergreen-300);
+  text-decoration-color: var(--color-evergreen-300);
+}
+
+/* ============================================
+   SECTION NUMBERS — large decorative bg digit
+   ============================================ */
+
+h2[data-num] {
+  position: relative;
+}
+
+h2[data-num]::after {
+  content: attr(data-num);
+  position: absolute;
+  right: -0.1em;
+  bottom: -0.15em;
+  font-size: 8rem;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 0.85;
+  color: currentColor;
+  opacity: 0.04;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+}
+
+@media (max-width: 780px) {
+  h2[data-num]::after {
+    font-size: 5rem;
+  }
+}
+
+/* ============================================
+   SERVICE CARDS — gradient, no tags
+   ============================================ */
+
+.service-card {
+  background:
+    linear-gradient(145deg, rgba(99, 56, 240, 0.04) 0%, rgba(255, 140, 50, 0.025) 55%, transparent 100%),
+    var(--color-bg);
+  padding: var(--spacing-10) var(--spacing-9);
+}
+
+body[data-theme="dark"] .service-card {
+  background:
+    linear-gradient(145deg, rgba(99, 56, 240, 0.07) 0%, rgba(255, 140, 50, 0.04) 55%, transparent 100%),
+    var(--color-bg);
 }
