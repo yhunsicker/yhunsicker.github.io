@@ -450,6 +450,7 @@ body[data-theme="dark"] .theme-toggle:hover {
 
 .container-speaking-writing {
   margin-bottom: var(--spacing-18);
+   padding-top: var(--spacing-10);
 }
 
 h1 {
@@ -1223,7 +1224,7 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
 
 .services {
   width: 100%;
-  padding-top: var(--spacing-10);
+ 
 }
 
 .section-label {
