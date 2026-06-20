@@ -800,14 +800,16 @@ p {
 
 .project-divider {
   border: 0;
-  border-top: 1px solid color-mix(in srgb, var(--color-text) 14%, transparent);
-  margin: var(--spacing-4) 0 var(--spacing-3);
+  display: block;
+  width: 100%;
+  border-top: 1px solid rgba(75, 116, 73, 0.35);
+  margin: var(--spacing-4) 0;
 }
 
 .project-status {
   font-size: var(--font-size-xs);
   color: color-mix(in srgb, var(--color-text) 78%, transparent);
-  margin-top: var(--spacing-3);
+  margin-top: 0;
 }
 
 @media (max-width: 780px) {
@@ -824,13 +826,13 @@ p {
     width: 100%;
     max-width: none;
     min-width: 0;
-    order: 2;
+    order: 1;
     justify-content: flex-start;
     align-items: flex-start;
   }
 
   .project-card-content {
-    order: 1;
+    order: 2;
     width: 100%;
     align-items: flex-start;
     text-align: left;
@@ -1175,7 +1177,7 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
   width: 100%;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 780px) {
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
@@ -1195,6 +1197,13 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
   display: flex;
   align-items: center;
   gap: var(--spacing-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  list-style: none;
 }
 
 @media screen and (max-width: 380px) {
@@ -1202,6 +1211,25 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-4);
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .footer-links li {
+    width: 100%;
+  }
+
+  .footer-links a {
+    display: inline-flex;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .footer-bottom .back-to-top,
+  .footer-bottom .back-to-top:focus,
+  .footer-bottom .back-to-top:focus-visible {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
