@@ -620,6 +620,7 @@ p {
 
 .project-card {
   --project-card-border-width: 1.75px;
+  --project-card-radius: var(--spacing-2);
   position: relative;
   display: flex;
   flex-direction: row;
@@ -631,7 +632,7 @@ p {
 
   /* Styling */
   background-color: var(--color-cream-50);
-  border-radius: var(--spacing-4);
+  border-radius: var(--project-card-radius);
   border: var(--project-card-border-width) solid var(--color-evergreen-300);
   overflow: visible;
   transition:
@@ -665,7 +666,9 @@ p {
   border-top: var(--project-card-border-width) solid var(--color-burgundy-500);
   border-bottom: var(--project-card-border-width) solid
     var(--color-burgundy-500);
-  border-radius: calc(var(--spacing-4) + var(--project-card-border-width));
+  border-radius: calc(
+    var(--project-card-radius) + var(--project-card-border-width)
+  );
   transform: scaleX(0);
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2;
@@ -678,7 +681,9 @@ p {
   inset: calc(-1 * var(--project-card-border-width));
   border-left: var(--project-card-border-width) solid var(--color-burgundy-500);
   border-right: var(--project-card-border-width) solid var(--color-burgundy-500);
-  border-radius: calc(var(--spacing-4) + var(--project-card-border-width));
+  border-radius: calc(
+    var(--project-card-radius) + var(--project-card-border-width)
+  );
   transform: scaleY(0);
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2;
@@ -720,7 +725,7 @@ p {
   position: relative;
   width: 100%;
   height: auto;
-  border-radius: var(--spacing-4);
+  border-radius: var(--spacing-2);
   overflow: hidden;
 }
 
@@ -803,53 +808,6 @@ p {
   font-size: var(--font-size-xs);
   color: color-mix(in srgb, var(--color-text) 78%, transparent);
   margin-top: var(--spacing-3);
-}
-
-.project-actions {
-  margin-top: var(--spacing-4);
-}
-
-.project-cta {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: var(--spacing-2) var(--spacing-3-5);
-  border: 1px solid color-mix(in srgb, var(--color-primary) 55%, transparent);
-  border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  text-transform: none;
-  color: var(--color-primary);
-  transition:
-    background-color 0.18s ease,
-    border-color 0.18s ease,
-    color 0.18s ease,
-    transform 0.18s ease;
-}
-
-.project-cta:hover {
-  color: var(--color-cream-50);
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  text-decoration: none;
-}
-
-.project-cta:focus-visible {
-  outline: var(--spacing-0-5) solid var(--color-primary);
-  outline-offset: var(--spacing-0-5);
-  border-radius: 999px;
-}
-
-body[data-theme="dark"] .project-cta {
-  border-color: color-mix(in srgb, var(--color-evergreen-400) 65%, transparent);
-  color: var(--color-evergreen-400);
-}
-
-body[data-theme="dark"] .project-cta:hover {
-  background-color: var(--color-evergreen-400);
-  border-color: var(--color-evergreen-400);
-  color: var(--color-charcoal-900);
 }
 
 @media (max-width: 780px) {
@@ -942,7 +900,7 @@ body[data-theme="dark"] .project-cta:hover {
   width: 100%;
   padding: var(--spacing-6);
   border: 1.75px solid var(--color-evergreen-300);
-  border-radius: var(--spacing-3);
+  border-radius: var(--spacing-2);
   background: var(--color-cream-50);
   box-sizing: border-box;
   transition:
@@ -1055,7 +1013,7 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
   flex-direction: column;
   padding: var(--spacing-7) var(--spacing-7);
   border: 1.5px solid var(--color-evergreen-300);
-  border-radius: var(--spacing-3);
+  border-radius: var(--spacing-2);
   background-color: var(--color-bg);
   transition:
     transform 0.3s ease,
@@ -1364,7 +1322,7 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
   flex-direction: column;
   padding: var(--spacing-9) var(--spacing-8);
   border: 1.5px solid var(--color-evergreen-300);
-  border-radius: var(--spacing-3);
+  border-radius: var(--spacing-2);
   background-color: var(--color-bg);
   color: var(--color-text);
   transition: border-color 0.25s ease;
@@ -1651,7 +1609,7 @@ body[data-theme="dark"] .project-card--featured {
 /* Image zoom on hover */
 .project-card:hover .project-thumbnail-secondary,
 .project-card:focus-within .project-thumbnail-secondary {
-  transform: scale(1.04);
+  transform: none;
 }
 
 @media (max-width: 780px) {
