@@ -90,6 +90,8 @@ body[data-theme="dark"] {
   --color-evergreen-400: #94a88f;
   --color-link: #f4efe7;
   --color-link-hover: #6e8a6c;
+  /* Lightened primary for dark mode — #b42d2f fails on dark bgs (~2.6:1); #eb7a7a gives 5.3:1 on #222224 ✅ AA */
+  --color-primary: #eb7a7a;
 }
 
 body[data-theme="dark"] a:hover {
@@ -294,7 +296,7 @@ body:has(.skip-main:focus) .homenav {
 
 .homenav [lang="zh"] {
   font-family: var(--font-family-sans);
-  font-weight: 350;
+  font-weight: 400;
   font-size: var(--font-size-medium);
 }
 
@@ -501,6 +503,14 @@ h2 {
 }
 
 h3 {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-lg);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-2);
+  padding-top: var(--spacing-4);
+}
+
+h4 {
   font-size: var(--font-size-xl);
   line-height: var(--line-height-lg);
   color: var(--color-text);
@@ -778,7 +788,7 @@ p {
   padding-left: var(--spacing-2);
 }
 
-.project-card h3 {
+.project-card h4 {
   font-size: var(--font-size-xl);
   margin: var(--spacing-4) 0 var(--spacing-3);
   padding: 0;
@@ -838,7 +848,7 @@ p {
     text-align: left;
   }
 
-  .project-card h3 {
+  .project-card h4 {
     font-size: var(--font-size-lg);
     margin: var(--spacing-4) 0 var(--spacing-3) 0;
   }
@@ -973,7 +983,7 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
   background-color: rgba(110, 138, 108, 0.12);
 }
 
-.speaking-card h3 {
+.speaking-card h4 {
   font-size: var(--font-size-lg);
   margin: 0 0 var(--spacing-2) 0;
   padding: 0;
@@ -1303,7 +1313,7 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-primary);
-  background: color-mix(in srgb, currentColor 12%, transparent);
+  background: color-mix(in srgb, currentColor 6%, transparent);
   border-radius: 999px;
   margin: 0 0 var(--spacing-4);
 }
@@ -1319,7 +1329,7 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
   flex-shrink: 0;
 }
 
-.section-label + h2 {
+.section-label + h3 {
   margin-top: 0;
 }
 
@@ -1549,6 +1559,14 @@ body[data-theme="dark"] .section-band--alt {
   background-color: var(--color-bg-alt);
 }
 
+.section-band--about {
+  background-color: var(--color-bg-alt);
+}
+
+body[data-theme="dark"] .section-band--about {
+  background-color: var(--color-bg-alt);
+}
+
 /* Reset top margins that compensated for single-container layout */
 .section-band .header-work,
 .section-band .speaking-writing,
@@ -1578,6 +1596,9 @@ body[data-theme="dark"] .section-band--alt {
   min-height: 520px;
   margin-top: var(--spacing-16);
   margin-bottom: var(--spacing-20);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .header-hero h1 {
@@ -1624,7 +1645,7 @@ body[data-theme="dark"] .project-card--featured {
   max-width: 420px;
 }
 
-.project-card--featured h3 {
+.project-card--featured h4 {
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 850;
   line-height: 1.15;
@@ -1689,19 +1710,21 @@ body[data-theme="dark"] .project-card--featured {
    ============================================ */
 
 .section-band--dark {
-  background-color: #18150f;
+  background-color: #312b24;
   color: #f0ebe0;
 }
 
 body[data-theme="dark"] .section-band--dark {
-  background-color: #0f0d0a;
+  background-color: #1c1814;
 }
+
 
 .section-band--dark .section-label {
   color: var(--color-evergreen-300);
 }
 
 .section-band--dark h2,
+.section-band--dark h3,
 .section-band--dark p {
   color: #f0ebe0;
 }
@@ -1721,7 +1744,7 @@ body[data-theme="dark"] .section-band--dark {
 }
 
 .section-band--dark .thinking-venue {
-  color: rgba(240, 235, 224, 0.6);
+  color: rgba(240, 235, 224, 0.75);
 }
 
 .section-band--dark .type-talk {
@@ -1745,11 +1768,11 @@ body[data-theme="dark"] .section-band--dark {
    SECTION NUMBERS — large decorative bg digit
    ============================================ */
 
-h2[data-num] {
+h3[data-num] {
   position: relative;
 }
 
-h2[data-num]::after {
+h3[data-num]::after {
   content: attr(data-num);
   position: absolute;
   right: -0.1em;
@@ -1766,7 +1789,7 @@ h2[data-num]::after {
 }
 
 @media (max-width: 780px) {
-  h2[data-num]::after {
+  h3[data-num]::after {
     font-size: 5rem;
   }
 }
@@ -1796,4 +1819,103 @@ body[data-theme="dark"] .service-card {
       transparent 100%
     ),
     var(--color-bg);
+}
+
+/* ============================================
+   HERO SUBTITLE
+   ============================================ */
+
+.hero-subtitle {
+  font-size: var(--font-size-medium);
+  color: var(--color-text);
+  line-height: var(--line-height-md);
+  margin-top: var(--spacing-6);
+  opacity: 0.9;
+  max-width: 520px;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+.about-layout {
+  display: flex;
+  gap: var(--spacing-10);
+  align-items: flex-start;
+  margin-top: var(--spacing-8);
+  padding-bottom: var(--spacing-6);
+}
+
+.about-avatar {
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--color-text) 10%, var(--color-bg));
+  border: 1.5px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: color-mix(in srgb, var(--color-text) 35%, transparent);
+}
+
+.about-avatar svg {
+  width: 36px;
+  height: 36px;
+}
+
+.about-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  max-width: 680px;
+}
+
+.about-hello {
+  font-size: var(--font-size-medium);
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.about-content p {
+  margin: 0;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-2);
+  list-style: none;
+  padding: 0;
+}
+
+.about-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1-5);
+  font-size: 0.875rem;
+  padding: var(--spacing-1-5) var(--spacing-3);
+  border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent);
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--color-text) 85%, transparent);
+  background: transparent;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .about-layout {
+    flex-direction: column;
+    gap: var(--spacing-6);
+  }
+
+  .about-avatar {
+    flex: 0 0 60px;
+    width: 60px;
+    height: 60px;
+  }
 }

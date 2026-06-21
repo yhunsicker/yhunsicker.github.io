@@ -50,8 +50,9 @@
 
         <ul role="list">
           <li><a class="nav_link" href="#work">Work</a></li>
-          <li><a class="nav_link" href="#services">Services</a></li>
+          <li><a class="nav_link" href="#about">About</a></li>
           <li><a class="nav_link" href="#sharing">Sharing</a></li>
+          <li><a class="nav_link" href="#services">Services</a></li>
         </ul>
       </nav>
     </header>
@@ -73,25 +74,67 @@
         </div>
       </div>
 
+      <!-- About -->
+      <section id="about" class="section-band section-band--about" aria-labelledby="about-label">
+        <div class="container">
+          <h2 class="section-label" id="about-label">About</h2>
+          <div class="about-layout">
+            <div class="about-avatar" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.337 0-10 1.676-10 5v2h20v-2c0-3.324-6.663-5-10-5z"
+                />
+              </svg>
+            </div>
+            <div class="about-content">
+              <p class="about-hello">Hello</p>
+              <p>
+                I'm <strong>Yu-Li</strong> I came to design through an
+                unconventional route. I spent years working in international
+                women's and children's rights, living across multiple countries,
+                and trying to make complex systems work for people who are most
+                often left out of the room.
+              </p>
+
+              <p>
+                Somewhere along the way, I realized design was another way to do
+                the same thing. I care a lot about accessibility, not because
+                it's required, but because access is a human right.
+              </p>
+              <p>
+                I'm currently looking for my next remote role. Open to wherever
+                the work takes me, literally.
+              </p>
+              <ul class="about-tags" role="list" aria-label="Interests">
+                <li class="about-tag">🐾 Mochi (my cat)</li>
+                <li class="about-tag">✈️ travel</li>
+                <!-- <li class="about-tag">🌐 international everything</li> -->
+                <li class="about-tag">🫖 too much tea</li>
+                <li class="about-tag">📖 reading</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Portfolio content -->
       <section
         id="work"
         class="section-band section-band--alt"
-        aria-labelledby="work-heading"
+        aria-labelledby="work-label"
       >
         <div class="container">
           <div class="header-work">
-            <p class="section-label">Selected Work</p>
-            <h2 id="work-heading" data-num="01">Problems actually solved</h2>
-            <p>
-              AI helped write the code, but I personally audited every line
-              against accessibility standards. It was built with love, stolen
-              pockets of time, and more revisions than I would like to admit
-              (that stays between me and my code).
-            </p>
+            <h2 class="section-label" id="work-label">Selected Work</h2>
+            <h3 data-num="01">Problems actually solved</h3>
             <p class="nda-note">
-              Select case studies are shown below. Reach out to see the full
-              case studies.
+              Most client work is under NDA. Select case studies shown below —
+              reach out to see the full portfolio.
             </p>
           </div>
 
@@ -114,7 +157,7 @@
               </div>
               <div class="project-card-content">
                 <p class="project-title">fiveBelow</p>
-                <h3>Ecommerce Responsive Shopping Cart Redesign</h3>
+                <h4>Ecommerce Responsive Shopping Cart Redesign</h4>
                 <p class="project-description">
                   Users weren't completing their purchases. The drop-off wasn't
                   a payment problem or a price problem. It was a user experience
@@ -136,9 +179,9 @@
                   The Commonwealth of Massachusetts | Mass Digital Services
                   (MDS)
                 </p>
-                <h3>
+                <h4>
                   MyMassGov -- UX Accessibility at Scale for State Government
-                </h3>
+                </h4>
                 <p class="project-description">
                   25,000+ Massachusetts residents need to prove who they are to
                   access state services. My team built the identity verification
@@ -188,7 +231,7 @@
                   The Commonwealth of Massachusetts | The Department of Family
                   and Medical Leave (DFML)
                 </p>
-                <h3>Paid Family and Medical Leave (PFML) Portal</h3>
+                <h4>Paid Family and Medical Leave (PFML) Portal</h4>
                 <p class="project-description">
                   People filing for paid leave are often navigating a crisis. I
                   designed WCAG 2.1 AA-compliant features for Massachusetts'
@@ -213,14 +256,12 @@
       <section
         id="sharing"
         class="section-band section-band--dark"
-        aria-labelledby="speaking-writing-heading"
+        aria-labelledby="sharing-label"
       >
         <div class="container">
           <div class="speaking-writing">
-            <p class="section-label">Sharing</p>
-            <h2 id="speaking-writing-heading" data-num="02">
-              Knowledge is better shared
-            </h2>
+            <h2 class="section-label" id="sharing-label">Sharing</h2>
+            <h3 data-num="02">Knowledge sharing</h3>
             <p>
               No gatekeeping here, just good ideas steeping. This is a
               collection of talks and writing I've done on accessibility and
@@ -231,15 +272,15 @@
           <div class="thinking-grid">
             <article class="thinking-card">
               <span class="thinking-type type-talk"> Talk </span>
-              <h3 class="thinking-title">Introduction to Accessibility</h3>
+              <h4 class="thinking-title">Introduction to Accessibility</h4>
               <p class="thinking-venue">NERD Summit · 2023</p>
             </article>
 
             <article class="thinking-card">
               <span class="thinking-type type-blog"> Blog </span>
-              <h3 class="thinking-title">
+              <h4 class="thinking-title">
                 Improving Accessibility through Empathy-Driven Design
-              </h3>
+              </h4>
               <p class="thinking-venue">Medium · 2025</p>
               <a
                 href="https://medium.com/the-last-call/improving-accessibility-through-empathy-driven-design-231e1b15f0dc"
@@ -253,9 +294,9 @@
 
             <article class="thinking-card">
               <span class="thinking-type type-talk"> Talk </span>
-              <h3 class="thinking-title">
+              <h4 class="thinking-title">
                 Beyond the Basics: Accessible Form Validation That Works
-              </h3>
+              </h4>
               <p class="thinking-venue">FormFest · 2025</p>
             </article>
           </div>
@@ -266,21 +307,19 @@
       <section
         id="services"
         class="section-band section-band--alt services"
-        aria-labelledby="services-heading"
+        aria-labelledby="services-label"
       >
         <div class="container">
           <div class="section-header">
-            <span class="section-label" aria-hidden="true">What I do</span>
-            <h2 id="services-heading" class="section-title" data-num="03">
-              Work with me
-            </h2>
+            <h2 class="section-label" id="services-label">What I do</h2>
+            <h3 class="section-title" data-num="03">Work with me</h3>
           </div>
 
           <ul class="services-grid" role="list">
             <li class="service-card">
               <article>
                 <span class="service-num" aria-hidden="true">01</span>
-                <h3>Accessibility Consulting</h3>
+                <h4>Accessibility Consulting</h4>
                 <p class="service-desc">
                   Accessibility isn't a checkbox. I audit, remediate, train, and
                   build systems so accessibility is baked in, not bolted on.
@@ -291,7 +330,7 @@
             <li class="service-card">
               <article>
                 <span class="service-num" aria-hidden="true">02</span>
-                <h3>Product Design</h3>
+                <h4>Product Design</h4>
                 <p class="service-desc">
                   From wireframe to high-fidelity. I build thoughtful, tested
                   interfaces that balance user needs with business requirements.
@@ -302,7 +341,7 @@
             <li class="service-card">
               <article>
                 <span class="service-num" aria-hidden="true">03</span>
-                <h3>AI Prototyping</h3>
+                <h4>AI Prototyping</h4>
                 <p class="service-desc">
                   AI as a force multiplier. I use AI to bridge the gap between
                   design and and build proofs-of-concept at speed without losing
