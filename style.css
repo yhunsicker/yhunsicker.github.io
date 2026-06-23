@@ -1718,7 +1718,6 @@ body[data-theme="dark"] .section-band--dark {
   background-color: #1c1814;
 }
 
-
 .section-band--dark .section-label {
   color: var(--color-evergreen-300);
 }
@@ -1857,11 +1856,16 @@ body[data-theme="dark"] .service-card {
   align-items: center;
   justify-content: center;
   color: color-mix(in srgb, var(--color-text) 35%, transparent);
+  overflow: hidden;
 }
 
-.about-avatar svg {
-  width: 36px;
-  height: 36px;
+.about-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: scale(1);
+  object-position: center top;
 }
 
 .about-content {
