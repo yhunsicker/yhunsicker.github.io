@@ -812,13 +812,13 @@ p {
   border: 0;
   display: block;
   width: 100%;
-  border-top: 1px solid rgba(75, 116, 73, 0.35);
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 45%, transparent);
   margin: var(--spacing-4) 0;
 }
 
 .project-status {
   font-size: var(--font-size-xs);
-  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+  color: var(--color-text);
   margin-top: 0;
 }
 
@@ -1214,6 +1214,7 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
 
 .footer-links a {
   font-size: var(--font-size-medium);
+  padding: var(--spacing-1);
 }
 
 .footer-links li {
@@ -1684,6 +1685,19 @@ body[data-theme="dark"] .project-card--featured {
   margin-bottom: var(--spacing-4);
 }
 
+.nda-note a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-text);
+  text-underline-offset: var(--spacing-1);
+  padding: var(--spacing-1);
+}
+
+.nda-note a:hover,
+.nda-note a:focus {
+  color: var(--color-link-hover);
+  text-decoration-color: var(--color-link-hover);
+}
+
 /* ============================================
    STAT PULLQUOTE — PFML $1B moment
    ============================================ */
@@ -1876,6 +1890,15 @@ body[data-theme="dark"] .service-card {
   max-width: 680px;
 }
 
+.about-tagline {
+  font-style: italic;
+  font-weight: 800;
+}
+
+.about-name {
+  font-weight: 700;
+}
+
 .about-hello {
   font-size: var(--font-size-medium);
   font-weight: 600;
@@ -1883,6 +1906,11 @@ body[data-theme="dark"] .service-card {
   display: flex;
   align-items: center;
   gap: var(--spacing-2);
+}
+
+.about-hello::after {
+  content: "👋";
+  font-style: normal;
 }
 
 .about-content p {
@@ -1904,9 +1932,9 @@ body[data-theme="dark"] .service-card {
   gap: var(--spacing-1-5);
   font-size: 0.875rem;
   padding: var(--spacing-1-5) var(--spacing-3);
-  border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-text) 45%, transparent);
   border-radius: 999px;
-  color: color-mix(in srgb, var(--color-text) 85%, transparent);
+  color: var(--color-text);
   background: transparent;
   white-space: nowrap;
 }
