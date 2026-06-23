@@ -798,6 +798,7 @@ p {
   font-size: var(--font-size-xs);
   color: var(--color-text);
   margin-bottom: var(--spacing-2);
+  font-weight: 600;
 }
 
 .project-description {
