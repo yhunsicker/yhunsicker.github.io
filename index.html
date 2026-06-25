@@ -64,12 +64,25 @@
         <div class="container">
           <div class="header-hero">
             <h1>
-              Yu-Li designs
-              <span class="emphasize-word-1">accessible</span> digital
-              experiences that
-              <span class="emphasize-word-2">empower</span> every user, wherever
-              the work takes her.
+              <span class="emphasize-word-1">Accessible</span> by design.<br />
+              Human by <span class="emphasize-word-2">default.</span>
             </h1>
+            <p class="hero-subline">
+              Yu-Li is a senior UX designer turning complex systems and into
+              experiences anyone can use.
+            </p>
+            <div class="hero-cta">
+              <a href="#work" class="btn btn--primary">See selected work</a>
+              <a href="#connect" class="btn btn--secondary">Get in touch</a>
+            </div>
+            <p class="avail" role="status">
+              <span class="avail-dot" aria-hidden="true"></span>
+              <span class="avail-txt">
+                Seeking a <em>full-time</em> design role
+                <span class="avail-sep" aria-hidden="true">·</span>
+                <span class="avail-muted">open to select consulting</span>
+              </span>
+            </p>
           </div>
         </div>
       </div>
@@ -92,11 +105,10 @@
             <div class="about-content">
               <p class="about-hello">Hello</p>
               <p>
-                I'm <strong>Yu-Li.</strong> I came to design through an
-                unconventional route. I spent years working in international
-                women's and children's rights, living across multiple countries,
-                and trying to make complex systems work for people who are most
-                often left out of the room.
+                I came to design through an unconventional route. I spent years
+                working in international women's and children's rights, living
+                across multiple countries, and trying to make complex systems
+                work for people who are most often left out of the room.
               </p>
 
               <p>
@@ -358,55 +370,65 @@
           </ul>
         </div>
       </section>
+
     </main>
 
-    <!-- Footer -->
-    <footer id="contact" class="footer" aria-label="Footer">
-      <h2 class="sr-only">Footer</h2>
+    <!-- Stay Connected + Footer -->
+    <section
+      id="connect"
+      class="closing-band"
+      aria-labelledby="closing-h"
+      tabindex="-1"
+    >
+      <div class="closing-container">
 
-      <div class="container">
-        <span class="footer-divider-wrap" aria-hidden="true">
-          <div class="footer-divider"></div>
-        </span>
-
-        <div class="footer-bottom">
-          <p class="p-footer">
-            Painstakingly built with
-            <svg
-              class="heart-icon"
-              viewBox="0 0 32 29.6"
-              role="img"
-              aria-label="love"
-            >
-              <path
-                d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2 c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"
-              ></path>
+        <!-- Part 1: CTA -->
+        <p class="closing-eyebrow">Stay connected</p>
+        <h2 id="closing-h" class="closing-heading">
+          Let's make access the <span class="closing-em">default.</span>
+        </h2>
+        <p class="closing-lead">
+          Hiring, planning a project, or just want to talk accessibility?
+          I'd love to hear from you — no pitch required.
+        </p>
+        <div class="closing-btns">
+          <a href="mailto:yhunsicker@gmail.com" class="closing-btn closing-btn--primary">
+            Email me
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yu-li-hunsicker/"
+            class="closing-btn closing-btn--outline"
+            target="_blank"
+            rel="noopener"
+            aria-describedby="opensInNewTab"
+          >
+            LinkedIn
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M7 7h10v10"/>
             </svg>
-            (and too much tea) by yours truly | 2026
-          </p>
-          <ul class="footer-links" role="list">
-            <li>
-              <a class="nav_link" href="mailto:yhunsicker@gmail.com">Email</a>
-            </li>
-            <li>
-              <a
-                class="nav_link"
-                href="https://www.linkedin.com/in/yu-li-hunsicker/"
-                target="_blank"
-                rel="noopener"
-                aria-describedby="opensInNewTab"
-                >LinkedIn</a
-              >
-            </li>
-            <li><a href="#top" class="back-to-top">Back to top</a></li>
-          </ul>
+          </a>
         </div>
-        <!-- Visually hidden text for screen readers -->
-        <span id="opensInNewTab" class="visually-hidden"
-          >(opens in a new tab)</span
-        >
+
+        <!-- Divider + footer row -->
+        <div class="closing-footer">
+          <p class="closing-colophon">
+            Painstakingly built with
+            <svg class="closing-heart" width="14" height="13" viewBox="0 0 32 29.6" fill="currentColor" aria-hidden="true">
+              <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2 c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+            </svg>
+            (and too much tea) by yours truly · 2026
+          </p>
+          <a href="#top" class="closing-top-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+            Back to top
+          </a>
+        </div>
+
       </div>
-    </footer>
+      <span id="opensInNewTab" class="visually-hidden">(opens in a new tab)</span>
+    </section>
 
     <script src="./index.js"></script>
   </body>
