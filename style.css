@@ -28,10 +28,21 @@
   /* Font Family */
   --font-family-sans: "DM Sans", sans-serif;
 
+  /* Font Weight Scale */
+  --fw-body:      350;
+  --fw-regular:   400;
+  --fw-medium:    500;
+  --fw-semibold:  600;
+  --fw-bold:      700;
+  --fw-extrabold: 800;
+  --fw-black:     850;
+
   /* Typography Scale */
-  --font-size-xs: 1rem; /* 16px */
-  --font-size-medium: 1.125rem; /* 18px */
-  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-tag:    0.75rem;    /* 12px — labels, tags */
+  --font-size-label:  0.8125rem;  /* 13px — section eyebrows */
+  --font-size-xs:     1rem;       /* 16px */
+  --font-size-medium: 1.125rem;   /* 18px */
+  --font-size-lg:     1.25rem;    /* 20px */
 
   /* Heading Scale */
   --font-size-xl: clamp(1.25rem, 1.2vw + 1.1rem, 1.5rem); /* 20px → 24px */
@@ -40,6 +51,9 @@
   --font-size-4xl: clamp(2.5rem, 5vw + 1.5rem, 4rem); /* 40px → 64px */
   --font-size-5xl: clamp(3.75rem, 8vw + 1.5rem, 5.5rem); /* 60px → 88px */
   --font-size-h1: clamp(2rem, 6vw, 3.5rem); /* 32px → 56px */
+
+  /* Muted text */
+  --color-text-muted: #6a645c;
 
   /* Line Height */
   --line-height-base: 1.5; /* 24px */
@@ -90,6 +104,7 @@ body[data-theme="dark"] {
   --color-evergreen-400: #94a88f;
   --color-link: #f4efe7;
   --color-link-hover: #6e8a6c;
+  --color-text-muted: rgba(244, 239, 231, 0.6);
   /* Lightened primary for dark mode — #b42d2f fails on dark bgs (~2.6:1); #eb7a7a gives 5.3:1 on #222224 ✅ AA */
   --color-primary: #eb7a7a;
 }
@@ -134,7 +149,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 150vh;
   font-size: var(--font-size-medium);
-  font-weight: 350;
+  font-weight: var(--fw-body);
   line-height: 1.5;
   transition:
     background-color 0.3s ease,
@@ -148,7 +163,7 @@ body {
 
 *:focus-visible {
   outline: var(--spacing-0-5) solid var(--color-primary);
-  outline-offset: var(--spacing-0-5);
+  outline-offset: var(--spacing-1);
   border-radius: var(--spacing-1);
 }
 
@@ -296,7 +311,7 @@ body:has(.skip-main:focus) .homenav {
 
 .homenav [lang="zh"] {
   font-family: var(--font-family-sans);
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   font-size: var(--font-size-medium);
 }
 
@@ -353,7 +368,7 @@ body[data-theme="dark"] .theme-toggle:hover {
   border-color: var(--color-evergreen-400);
   outline: var(--spacing-0-5) solid var(--color-primary);
   outline-offset: var(--spacing-1);
-  border-radius: var(--spacing-3);
+  border-radius: var(--spacing-3); /* pill shape */
 }
 
 /* Responsive navigation */
@@ -487,7 +502,7 @@ h1 {
   font-size: var(--font-size-h1);
   color: var(--color-text);
   line-height: 1.2;
-  font-weight: 850;
+  font-weight: var(--fw-black);
   letter-spacing: -0.01em;
   margin: var(--spacing-12) 0 var(--spacing-6);
   max-width: 100%;
@@ -496,7 +511,7 @@ h1 {
 h2 {
   font-size: var(--font-size-2xl);
   color: var(--color-text);
-  font-weight: 850;
+  font-weight: var(--fw-black);
   letter-spacing: -0.015em;
   margin: var(--spacing-12) 0 var(--spacing-6);
   max-width: 100%;
@@ -504,6 +519,7 @@ h2 {
 
 h3 {
   font-size: var(--font-size-xl);
+  font-weight: var(--fw-black);
   line-height: var(--line-height-lg);
   color: var(--color-text);
   margin: 0 0 var(--spacing-2);
@@ -512,6 +528,7 @@ h3 {
 
 h4 {
   font-size: var(--font-size-xl);
+  font-weight: var(--fw-bold);
   line-height: var(--line-height-lg);
   color: var(--color-text);
   margin: 0 0 var(--spacing-2);
@@ -559,7 +576,7 @@ p {
   border-radius: var(--spacing-1);
   font-family: var(--font-family-sans, "DM Sans", system-ui, sans-serif);
   font-size: var(--font-size-medium);
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   text-decoration: none;
   cursor: pointer;
   border: 1.5px solid transparent;
@@ -640,14 +657,14 @@ p {
 .avail-txt {
   font-family: var(--font-family-sans, "DM Sans", system-ui, sans-serif);
   font-size: var(--font-size-medium);
-  font-weight: 400;
+  font-weight: var(--fw-body);
   color: var(--color-text);
   line-height: 1.6;
 }
 
 .avail-txt em {
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--color-evergreen-400, #4b7449);
 }
 
@@ -655,7 +672,7 @@ p {
   display: inline-block;
   color: var(--color-evergreen-300, #97b195);
   margin: 0 4px;
-  font-weight: 400;
+  font-weight: var(--fw-body);
   font-size: 1.4rem;
   line-height: 0;
   vertical-align: middle;
@@ -663,7 +680,7 @@ p {
 
 .avail-muted {
   color: var(--color-text);
-  font-weight: 400;
+  font-weight: var(--fw-body);
 }
 
 @media screen and (max-width: 480px) {
@@ -686,12 +703,12 @@ p {
 
 .emphasize-word-1 {
   color: var(--color-secondary);
-  font-weight: 850;
+  font-weight: var(--fw-black);
 }
 
 .emphasize-word-2 {
   color: var(--color-primary);
-  font-weight: 850;
+  font-weight: var(--fw-black);
 }
 
 /* Responsive tweaks for header h1 */
@@ -725,6 +742,7 @@ p {
 
 .speaking-writing p {
   max-width: 900px;
+  margin-top: var(--spacing-4);
   margin-bottom: var(--spacing-4);
 }
 
@@ -742,6 +760,7 @@ p {
 
 .header-work p {
   max-width: 900px;
+  margin-top: var(--spacing-4);
   margin-bottom: var(--spacing-4);
 }
 
@@ -764,7 +783,7 @@ p {
 }
 
 .project-card {
-  --project-card-border-width: 1.75px;
+  --project-card-border-width: 1.5px;
   --project-card-radius: var(--spacing-2);
   position: relative;
   display: flex;
@@ -933,7 +952,7 @@ p {
   font-size: var(--font-size-xs);
   color: var(--color-text);
   margin-bottom: var(--spacing-2);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
 }
 
 .project-description {
@@ -1047,7 +1066,7 @@ p {
   flex-direction: column;
   width: 100%;
   padding: var(--spacing-6);
-  border: 1.75px solid var(--color-evergreen-300);
+  border: 1.5px solid var(--color-evergreen-300);
   border-radius: var(--spacing-2);
   background: var(--color-cream-50);
   box-sizing: border-box;
@@ -1082,7 +1101,7 @@ p {
 .speaking-tag {
   display: inline-block;
   font-size: var(--font-size-xs);
-  font-weight: 850;
+  font-weight: var(--fw-black);
   padding: var(--spacing-1) var(--spacing-2);
   color: var(--color-bg);
   border-radius: var(--spacing-1);
@@ -1128,7 +1147,7 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
 .speaking-meta {
   font-size: var(--font-size-xs);
   color: var(--color-text);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   opacity: 0.7;
 }
 
@@ -1194,8 +1213,8 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-1-5);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: var(--font-size-tag);
+  font-weight: var(--fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: var(--spacing-4);
@@ -1211,7 +1230,7 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
 
 .thinking-title {
   font-size: var(--font-size-xl);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--color-text);
   margin: 0 0 var(--spacing-3);
   padding: 0;
@@ -1219,15 +1238,14 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
 }
 
 .thinking-venue {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: var(--font-size-xs);
+  font-weight: var(--fw-medium);
   color: var(--color-text-muted);
   margin: 0 0 var(--spacing-4);
-  opacity: 0.8;
 }
 
 .thinking-desc {
-  font-size: 1rem;
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   line-height: var(--line-height-md);
   margin: 0 0 var(--spacing-6);
@@ -1235,8 +1253,8 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
 }
 
 .thinking-link {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: var(--font-size-xs);
+  font-weight: var(--fw-medium);
   color: var(--color-text);
   text-underline-offset: var(--spacing-1);
   margin-top: auto;
@@ -1385,10 +1403,6 @@ body[data-theme="dark"] .speaking-card:has(.speaking-tag.talk) {
   }
 }
 
-.footer-bottom .back-to-top:focus,
-.footer-bottom .back-to-top:focus-visible {
-  padding: var(--spacing-1) var(--spacing-1);
-}
 
 .footer-bottom .back-to-top:hover {
   color: var(--color-burgundy-700);
@@ -1446,8 +1460,8 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
   gap: var(--spacing-3);
   padding: var(--spacing-1-5) var(--spacing-3) var(--spacing-1-5)
     var(--spacing-4);
-  font-size: 0.8125rem;
-  font-weight: 800;
+  font-size: var(--font-size-label);
+  font-weight: var(--fw-extrabold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -1474,7 +1488,7 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
 
 .section-title {
   font-size: var(--font-size-2xl);
-  font-weight: 850;
+  font-weight: var(--fw-black);
   line-height: var(--line-height-xl);
   color: var(--color-text);
   margin: 0;
@@ -1540,7 +1554,7 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
 
 .service-num {
   font-size: var(--font-size-xs);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: 0.1em;
   color: var(--color-secondary);
   margin: 0 0 var(--spacing-2);
@@ -1562,7 +1576,7 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
 
 .service-name {
   font-size: var(--font-size-xl);
-  font-weight: 850;
+  font-weight: var(--fw-black);
   line-height: var(--line-height-lg);
   color: var(--color-text);
   margin: 0 0 var(--spacing-4);
@@ -1586,8 +1600,8 @@ body[data-theme="dark"] .footer-bottom .back-to-top:hover {
 }
 
 .service-tag {
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: var(--font-size-tag);
+  font-weight: var(--fw-medium);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text);
@@ -1747,7 +1761,7 @@ body[data-theme="dark"] .section-band--about {
   font-size: clamp(2.8rem, 7.5vw, 5.5rem);
   line-height: 1.05;
   letter-spacing: -0.025em;
-  font-weight: 850;
+  font-weight: var(--fw-black);
   max-width: 14ch;
 }
 
@@ -1789,7 +1803,7 @@ body[data-theme="dark"] .project-card--featured {
 
 .project-card--featured h4 {
   font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 850;
+  font-weight: var(--fw-black);
   line-height: 1.15;
   letter-spacing: -0.02em;
   padding-top: var(--spacing-3);
@@ -1854,8 +1868,8 @@ body[data-theme="dark"] .project-card--featured {
 
 .stat-number {
   display: inline;
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-size: var(--font-size-lg);
+  font-weight: var(--fw-extrabold);
   letter-spacing: -0.02em;
   color: var(--color-primary);
 }
@@ -1932,7 +1946,7 @@ h3[data-num]::after {
   right: -0.1em;
   bottom: -0.15em;
   font-size: 8rem;
-  font-weight: 900;
+  font-weight: var(--fw-black);
   letter-spacing: -0.06em;
   line-height: 0.85;
   color: currentColor;
@@ -2033,16 +2047,16 @@ body[data-theme="dark"] .service-card {
 
 .about-tagline {
   font-style: italic;
-  font-weight: 800;
+  font-weight: var(--fw-extrabold);
 }
 
 .about-name {
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
 .about-hello {
   font-size: var(--font-size-medium);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   margin: 0;
   display: flex;
   align-items: center;
@@ -2120,8 +2134,8 @@ body[data-theme="dark"] .service-card {
   align-items: center;
   gap: var(--spacing-3);
   padding: var(--spacing-1-5) var(--spacing-3) var(--spacing-1-5) var(--spacing-4);
-  font-size: 0.8125rem;
-  font-weight: 800;
+  font-size: var(--font-size-label);
+  font-weight: var(--fw-extrabold);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-burgundy-500, #b42d2f);
@@ -2142,10 +2156,10 @@ body[data-theme="dark"] .service-card {
 
 .closing-heading {
   font-size: clamp(2.5rem, 5vw, 3.75rem);
-  font-weight: 900;
+  font-weight: var(--fw-black);
   letter-spacing: -0.03em;
   line-height: 1.02;
-  color: var(--color-charcoal-900, #3a3530);
+  color: var(--color-text);
   max-width: 12ch;
   margin: 0 0 var(--spacing-6);
   padding-top: var(--spacing-4);
@@ -2179,10 +2193,10 @@ body[data-theme="dark"] .service-card {
   border-radius: 10px;
   font-family: var(--font-family-sans, "DM Sans", system-ui, sans-serif);
   font-size: var(--font-size-medium);
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   white-space: nowrap;
   text-decoration: none;
-  border: 2px solid transparent;
+  border: 1.5px solid transparent;
   cursor: pointer;
 }
 
@@ -2216,9 +2230,9 @@ body[data-theme="dark"] .service-card {
 
 .closing-btn:focus-visible,
 .closing-top-link:focus-visible {
-  outline: 2px solid var(--color-burgundy-500, #b42d2f);
-  outline-offset: 3px;
-  border-radius: 6px;
+  outline: var(--spacing-0-5) solid var(--color-primary);
+  outline-offset: var(--spacing-1);
+  border-radius: var(--spacing-1);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -2241,7 +2255,7 @@ body[data-theme="dark"] .service-card {
   gap: var(--spacing-4);
   margin-top: clamp(48px, 7vw, 88px);
   padding-top: 28px;
-  border-top: 1px solid rgba(58, 53, 48, 0.16);
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 45%, transparent);
 }
 
 .closing-colophon {
@@ -2276,6 +2290,7 @@ body[data-theme="dark"] .service-card {
   text-decoration: none;
   min-height: 44px;
   white-space: nowrap;
+  padding: var(--spacing-1) var(--spacing-3);
 }
 
 .closing-top-link:hover {
@@ -2328,7 +2343,7 @@ body[data-theme="dark"] .service-card {
 
 .connect-title {
   font-size: var(--font-size-h1);
-  font-weight: 850;
+  font-weight: var(--fw-black);
   line-height: 1.1;
   color: var(--color-text);
   margin: 0 0 var(--spacing-6);
@@ -2363,7 +2378,7 @@ body[data-theme="dark"] .service-card {
   border-radius: var(--spacing-1);
   font-family: var(--font-family-sans);
   font-size: var(--font-size-medium);
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
