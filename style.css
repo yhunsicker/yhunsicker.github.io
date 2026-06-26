@@ -612,7 +612,7 @@ p {
 
 .avail {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   margin: 0;
   margin-top: var(--spacing-11);
@@ -629,7 +629,6 @@ p {
   border-radius: 50%;
   background: var(--color-evergreen-400, #4b7449);
   flex: none;
-  margin-top: 6px;
   box-shadow: 0 0 0 4px rgba(75, 116, 73, 0.2);
   position: relative;
 }
