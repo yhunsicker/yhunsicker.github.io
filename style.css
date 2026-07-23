@@ -2160,7 +2160,7 @@ body[data-theme="dark"] .service-card {
   letter-spacing: -0.03em;
   line-height: 1.02;
   color: var(--color-text);
-  max-width: 12ch;
+  max-width: 15ch;
   margin: 0 0 var(--spacing-6);
   padding-top: var(--spacing-4);
 }
@@ -2213,6 +2213,7 @@ body[data-theme="dark"] .service-card {
 
 .closing-btn--outline {
   background: transparent;
+  border-width: 2px;
   border-color: var(--color-evergreen-400, #4b7449);
   color: var(--color-charcoal-900, #3a3530);
 }
@@ -2361,52 +2362,6 @@ body[data-theme="dark"] .service-card {
   color: var(--color-text);
   margin: 0 0 var(--spacing-10);
   max-width: 560px;
-}
-
-.connect-ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-4);
-  margin-bottom: var(--spacing-12);
-}
-
-.connect-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-2-5);
-  padding: var(--spacing-3) var(--spacing-6);
-  border-radius: var(--spacing-1);
-  font-family: var(--font-family-sans);
-  font-size: var(--font-size-medium);
-  font-weight: var(--fw-regular);
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.connect-btn--filled {
-  background-color: var(--color-primary);
-  border: 1.5px solid var(--color-primary);
-  color: #fff;
-}
-
-.connect-btn--filled:hover {
-  background-color: var(--color-burgundy-700);
-  border-color: var(--color-burgundy-700);
-  color: #fff;
-  text-decoration: none;
-}
-
-.connect-btn--outline {
-  background-color: transparent;
-  border: 1.5px solid var(--color-evergreen-400, #4b7449);
-  color: var(--color-charcoal-900, #3a3530);
-}
-
-.connect-btn--outline:hover {
-  background-color: var(--color-evergreen-400, #4b7449);
-  color: #fff;
-  text-decoration: none;
 }
 
 .section-band--connect {
